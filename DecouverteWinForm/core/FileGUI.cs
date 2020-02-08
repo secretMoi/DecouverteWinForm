@@ -4,19 +4,24 @@ namespace DecouverteWinForm.core
 {
     public class FileGUI
     {
-        private OpenFileDialog openFileDialog;
+        private FileDialog fileDialog;
+        public const int Read = 0; 
+        public const int Write = 1; 
         
-        public FileGUI()
+        public FileGUI(int method = Read)
         {
-            openFileDialog = new OpenFileDialog();
+            if(method == Read)
+                fileDialog = new OpenFileDialog();
+            else
+                fileDialog = new SaveFileDialog();
         }
 
         public void AddFilter(string texte, string extension)
         {
-            if (openFileDialog.Filter.Length > 0)
-                openFileDialog.Filter += "|" + texte + "|*." + extension;
+            if (fileDialog.Filter.Length > 0)
+                fileDialog.Filter += "|" + texte + "|*." + extension;
             else
-                openFileDialog.Filter = texte + "|*." + extension;
+                fileDialog.Filter = texte + "|*." + extension;
         }
 
         public DialogResult ShowDialog()
@@ -26,6 +31,6 @@ namespace DecouverteWinForm.core
 
         public string FileName => Get.FileName;
 
-        public OpenFileDialog Get => openFileDialog;
+        public FileDialog Get => fileDialog;
     }
 }

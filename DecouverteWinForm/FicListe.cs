@@ -74,12 +74,13 @@ namespace DecouverteWinForm
 
         private void buttonSauver_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = @"Fichiers texte|*.txt|Tous fichiers|*.*";
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            FileGUI fileGui = new FileGUI(FileGUI.Write);
+            fileGui.AddFilter("Fichiers texte", "txt");
+            fileGui.AddFilter("Tous les fichiers", "*");
+            
+            if (fileGui.ShowDialog() == DialogResult.OK)
             {
-                fichier = saveFileDialog.FileName;
+                fichier = fileGui.FileName;
                 
                 using (StreamWriter streamWriter = new StreamWriter(fichier))
                 {
