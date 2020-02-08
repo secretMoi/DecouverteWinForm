@@ -1,0 +1,16 @@
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\DecouverteWinForm.exe.config
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\DecouverteWinForm.exe
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\DecouverteWinForm.pdb
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.csprojAssemblyReference.cache
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.Properties.Resources.resources
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.csproj.GenerateResource.cache
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.csproj.CoreCompileInputs.cache
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.exe
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.pdb
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.Form1.resources
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicPrincipal.resources
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicAPropos.resources
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicProgression.resources
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicListe.resources
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\Resources\fond.jpg
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\Resources\volcan.png

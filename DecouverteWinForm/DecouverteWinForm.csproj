@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CD1EE6E-42BC-4EBE-93F4-A3DCF3A92E5D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DecouverteWinForm</RootNamespace>
+    <AssemblyName>DecouverteWinForm</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="core\FileGUI.cs" />
+    <Compile Include="core\Ressource.cs" />
+    <Compile Include="EcranAccueil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EcranAccueil.Designer.cs">
+      <DependentUpon>EcranAccueil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicAPropos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicAPropos.Designer.cs">
+      <DependentUpon>FicAPropos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicListe.Designer.cs">
+      <DependentUpon>FicListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicPrincipal.Designer.cs">
+      <DependentUpon>FicPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicProgression.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicProgression.Designer.cs">
+      <DependentUpon>FicProgression.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EcranAccueil.resx">
+      <DependentUpon>EcranAccueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicAPropos.resx">
+      <DependentUpon>FicAPropos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicListe.resx">
+      <DependentUpon>FicListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicPrincipal.resx">
+      <DependentUpon>FicPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicProgression.resx">
+      <DependentUpon>FicProgression.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\fond.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\volcan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
