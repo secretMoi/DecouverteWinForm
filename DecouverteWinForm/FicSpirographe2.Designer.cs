@@ -31,12 +31,35 @@ namespace DecouverteWinForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(933, 519);
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
+            this.pictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox_Paint);
+            // 
+            // FicSpirographe2
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(933, 519);
+            this.Controls.Add(this.pictureBox);
+            this.Name = "FicSpirographe2";
             this.Text = "FicSpirographe2";
+            this.Load += new System.EventHandler(this.FicSpirographe2_Load);
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox)).EndInit();
+            this.ResumeLayout(false);
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }

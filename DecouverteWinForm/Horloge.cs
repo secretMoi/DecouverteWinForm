@@ -54,9 +54,10 @@ namespace DecouverteWinForm
 
         public void Anime(int heure, int minute, int seconde)
         {
-            elements["AiguilleSeconde"].Rotation.Angle = (-seconde * 6) + 15 * 6;
-            elements["AiguilleMinute"].Rotation.Angle = (-minute * 6) + 15 * 6;
-            elements["AiguilleHeure"].Rotation.Angle = (-heure * 6) + 15 * 6;
+            int decalage = 15 * 6;
+            elements["AiguilleSeconde"].Rotation.Angle = -seconde * 6 + decalage;
+            elements["AiguilleMinute"].Rotation.Angle = -minute * 6 + decalage;
+            elements["AiguilleHeure"].Rotation.Angle = -heure * 30 + decalage;
         }
     }
 }

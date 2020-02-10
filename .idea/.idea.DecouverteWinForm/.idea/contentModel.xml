@@ -33,6 +33,9 @@
         <e p="FicAPropos.cs" t="Include" />
         <e p="FicAPropos.Designer.cs" t="Include" />
         <e p="FicAPropos.resx" t="Include" />
+        <e p="FicClavierSouris.cs" t="Include" />
+        <e p="FicClavierSouris.Designer.cs" t="Include" />
+        <e p="FicClavierSouris.resx" t="Include" />
         <e p="FicEditeur.cs" t="Include" />
         <e p="FicEditeur.Designer.cs" t="Include" />
         <e p="FicEditeur.resx" t="Include" />
@@ -53,6 +56,8 @@
         <e p="FicSpirographe.resx" t="Include" />
         <e p="FicSpirographe2.cs" t="Include" />
         <e p="FicSpirographe2.Designer.cs" t="Include" />
+        <e p="FicSpirographe2.resx" t="Include" />
+        <e p="Graphique.cs" t="Include" />
         <e p="Horloge.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Program.cs" t="Include" />
@@ -67,6 +72,7 @@
           <e p="fond.jpg" t="Include" />
           <e p="volcan.png" t="Include" />
         </e>
+        <e p="Spirographe.cs" t="Include" />
       </e>
       <e p="DecouverteWinForm.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />

@@ -38,9 +38,11 @@ namespace DecouverteWinForm
             this.menuControleEditeur = new System.Windows.Forms.ToolStripMenuItem();
             this.menuApplicationSpirographe = new System.Windows.Forms.ToolStripMenuItem();
             this.spirographeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuApplicationsHorloge = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuApplicationsSpinographe2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAPropos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAProposAPropos = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuApplicationsHorloge = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuControlesClavierSouris = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +59,10 @@ namespace DecouverteWinForm
             // menuControle
             // 
             this.menuControle.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[]
-                {this.menuControleProgression, this.menuControleListe, this.menuControleEditeur});
+            {
+                this.menuControleProgression, this.menuControleListe, this.menuControleEditeur,
+                this.menuControlesClavierSouris
+            });
             this.menuControle.Name = "menuControle";
             this.menuControle.Size = new System.Drawing.Size(70, 20);
             this.menuControle.Text = "Contrôles";
@@ -86,7 +91,7 @@ namespace DecouverteWinForm
             // menuApplicationSpirographe
             // 
             this.menuApplicationSpirographe.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[]
-                {this.spirographeToolStripMenuItem, this.menuApplicationsHorloge});
+                {this.spirographeToolStripMenuItem, this.menuApplicationsHorloge, this.menuApplicationsSpinographe2});
             this.menuApplicationSpirographe.Name = "menuApplicationSpirographe";
             this.menuApplicationSpirographe.Size = new System.Drawing.Size(85, 20);
             this.menuApplicationSpirographe.Text = "Applications";
@@ -94,9 +99,23 @@ namespace DecouverteWinForm
             // spirographeToolStripMenuItem
             // 
             this.spirographeToolStripMenuItem.Name = "spirographeToolStripMenuItem";
-            this.spirographeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.spirographeToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.spirographeToolStripMenuItem.Text = "Spirographe";
             this.spirographeToolStripMenuItem.Click += new System.EventHandler(this.spirographeToolStripMenuItem_Click);
+            // 
+            // menuApplicationsHorloge
+            // 
+            this.menuApplicationsHorloge.Name = "menuApplicationsHorloge";
+            this.menuApplicationsHorloge.Size = new System.Drawing.Size(147, 22);
+            this.menuApplicationsHorloge.Text = "Horloge";
+            this.menuApplicationsHorloge.Click += new System.EventHandler(this.menuApplicationsHorloge_Click);
+            // 
+            // menuApplicationsSpinographe2
+            // 
+            this.menuApplicationsSpinographe2.Name = "menuApplicationsSpinographe2";
+            this.menuApplicationsSpinographe2.Size = new System.Drawing.Size(147, 22);
+            this.menuApplicationsSpinographe2.Text = "Spinographe2";
+            this.menuApplicationsSpinographe2.Click += new System.EventHandler(this.menuApplicationsSpinographe2_Click);
             // 
             // menuAPropos
             // 
@@ -112,12 +131,12 @@ namespace DecouverteWinForm
             this.menuAProposAPropos.Text = "A propos";
             this.menuAProposAPropos.Click += new System.EventHandler(this.menuAProposAPropos_Click);
             // 
-            // menuApplicationsHorloge
+            // menuControlesClavierSouris
             // 
-            this.menuApplicationsHorloge.Name = "menuApplicationsHorloge";
-            this.menuApplicationsHorloge.Size = new System.Drawing.Size(152, 22);
-            this.menuApplicationsHorloge.Text = "Horloge";
-            this.menuApplicationsHorloge.Click += new System.EventHandler(this.menuApplicationsHorloge_Click);
+            this.menuControlesClavierSouris.Name = "menuControlesClavierSouris";
+            this.menuControlesClavierSouris.Size = new System.Drawing.Size(182, 22);
+            this.menuControlesClavierSouris.Text = "Clavier/Souris";
+            this.menuControlesClavierSouris.Click += new System.EventHandler(this.menuControlesClavierSouris_Click);
             // 
             // FicPrincipal
             // 
@@ -147,5 +166,7 @@ namespace DecouverteWinForm
         private System.Windows.Forms.ToolStripMenuItem spirographeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuApplicationSpirographe;
         private System.Windows.Forms.ToolStripMenuItem menuApplicationsHorloge;
+        private System.Windows.Forms.ToolStripMenuItem menuApplicationsSpinographe2;
+        private System.Windows.Forms.ToolStripMenuItem menuControlesClavierSouris;
     }
 }

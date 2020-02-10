@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Timers;
 using System.Windows.Forms;
 using DecouverteWinForm.Core.Figures;
@@ -41,8 +42,7 @@ namespace DecouverteWinForm
             
             timerFini = false;
             
-            var src = DateTime.Now;
-            DateTime temps = new DateTime(src.Year, src.Month, src.Day, src.Hour, src.Minute, src.Second);
+            DateTime temps = DateTime.Now;
 
             horloge.Anime(temps.Hour, temps.Minute, temps.Second);
 
@@ -53,6 +53,8 @@ namespace DecouverteWinForm
         
         private void pictureBox_Paint(object sender, PaintEventArgs e)
         {
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            
             // redessine toutes les parties des éléments
             horloge.Affiche(e.Graphics);
         }
