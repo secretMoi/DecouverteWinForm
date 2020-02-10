@@ -90,7 +90,6 @@ namespace DecouverteWinForm
             this.buttonFond.TabIndex = 7;
             this.buttonFond.Text = "Fond";
             this.buttonFond.UseVisualStyleBackColor = true;
-            this.buttonFond.Click += new System.EventHandler(this.buttonFond_Click);
             // 
             // buttonGo
             // 
@@ -130,7 +129,6 @@ namespace DecouverteWinForm
             this.trackBarDensite.Size = new System.Drawing.Size(220, 45);
             this.trackBarDensite.TabIndex = 3;
             this.trackBarDensite.Value = 10;
-            this.trackBarDensite.Scroll += new System.EventHandler(this.trackBarDensite_Scroll);
             // 
             // labelDensite
             // 

@@ -44,5 +44,11 @@ namespace DecouverteWinForm
             FicSpirographe fenetre = new FicSpirographe();
             fenetre.ShowDialog(); // empêche de revenir à la fenêtre précédente
         }
+
+        private void menuApplicationsHorloge_Click(object sender, EventArgs e)
+        {
+            FicHorloge fenetre = new FicHorloge();
+            fenetre.ShowDialog(); // empêche de revenir à la fenêtre précédente
+        }
     }
 }

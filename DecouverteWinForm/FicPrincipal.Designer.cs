@@ -37,9 +37,10 @@ namespace DecouverteWinForm
             this.menuControleListe = new System.Windows.Forms.ToolStripMenuItem();
             this.menuControleEditeur = new System.Windows.Forms.ToolStripMenuItem();
             this.menuApplicationSpirographe = new System.Windows.Forms.ToolStripMenuItem();
+            this.spirographeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAPropos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAProposAPropos = new System.Windows.Forms.ToolStripMenuItem();
-            this.spirographeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuApplicationsHorloge = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,10 +86,17 @@ namespace DecouverteWinForm
             // menuApplicationSpirographe
             // 
             this.menuApplicationSpirographe.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[]
-                {this.spirographeToolStripMenuItem});
+                {this.spirographeToolStripMenuItem, this.menuApplicationsHorloge});
             this.menuApplicationSpirographe.Name = "menuApplicationSpirographe";
             this.menuApplicationSpirographe.Size = new System.Drawing.Size(85, 20);
             this.menuApplicationSpirographe.Text = "Applications";
+            // 
+            // spirographeToolStripMenuItem
+            // 
+            this.spirographeToolStripMenuItem.Name = "spirographeToolStripMenuItem";
+            this.spirographeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.spirographeToolStripMenuItem.Text = "Spirographe";
+            this.spirographeToolStripMenuItem.Click += new System.EventHandler(this.spirographeToolStripMenuItem_Click);
             // 
             // menuAPropos
             // 
@@ -104,12 +112,12 @@ namespace DecouverteWinForm
             this.menuAProposAPropos.Text = "A propos";
             this.menuAProposAPropos.Click += new System.EventHandler(this.menuAProposAPropos_Click);
             // 
-            // spirographeToolStripMenuItem
+            // menuApplicationsHorloge
             // 
-            this.spirographeToolStripMenuItem.Name = "spirographeToolStripMenuItem";
-            this.spirographeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.spirographeToolStripMenuItem.Text = "Spirographe";
-            this.spirographeToolStripMenuItem.Click += new System.EventHandler(this.spirographeToolStripMenuItem_Click);
+            this.menuApplicationsHorloge.Name = "menuApplicationsHorloge";
+            this.menuApplicationsHorloge.Size = new System.Drawing.Size(152, 22);
+            this.menuApplicationsHorloge.Text = "Horloge";
+            this.menuApplicationsHorloge.Click += new System.EventHandler(this.menuApplicationsHorloge_Click);
             // 
             // FicPrincipal
             // 
@@ -138,5 +146,6 @@ namespace DecouverteWinForm
         private System.Windows.Forms.ToolStripMenuItem menuAProposAPropos;
         private System.Windows.Forms.ToolStripMenuItem spirographeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuApplicationSpirographe;
+        private System.Windows.Forms.ToolStripMenuItem menuApplicationsHorloge;
     }
 }

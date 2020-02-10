@@ -10,6 +10,9 @@ namespace DecouverteWinForm
     {
         private Color trait, fond;
         private GraphicsPath DessinSauve;
+        int nombreSommets;
+        int nombreDensite;
+        int nombreProfondeur;
         
         private enum Couleur
         {
@@ -23,14 +26,6 @@ namespace DecouverteWinForm
             fond = Color.DarkBlue;
             trait = Color.Cyan;
         }
-
-        private double Distance(double x1, double y1, double x2, double y2)
-        {
-            return Math.Sqrt(
-                Math.Pow(x1 - x2, 2) +
-                Math.Pow(y1 - y2, 2)
-            );
-        }
         
         private double Distance(PointF point1, PointF point2)
         {
@@ -40,21 +35,11 @@ namespace DecouverteWinForm
             );
         }
 
-        private void EcranSpirographe_Paint(object sender, PaintEventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        private void trackBarDensite_Scroll(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
         private void buttonGo_Click(object sender, EventArgs e)
         {
-            int nombreSommets = trackBarSommets.Value;
-            int nombreDensite = trackBarDensite.Value;
-            int nombreProfondeur = trackBarProfondeur.Value;
+            nombreSommets = trackBarSommets.Value;
+            nombreDensite = trackBarDensite.Value;
+            nombreProfondeur = trackBarProfondeur.Value;
             Graphics graphics = CreateGraphics();
             
             DessinSauve = new GraphicsPath();
@@ -105,7 +90,7 @@ namespace DecouverteWinForm
             }
         }
 
-        private unsafe void ChangeCouleur(Couleur type = Couleur.Trait)
+        private void ChangeCouleur(Couleur type = Couleur.Trait)
         {
             Color couleur = trait;
 
@@ -123,35 +108,19 @@ namespace DecouverteWinForm
             }
         }
 
-        private Object Assigne(ref object objet)
-        {
-            return objet;
-        }
-
         private void buttonTrait_Click(object sender, EventArgs e)
         {
-            /*colorDialog.Color = trait;
-            if(colorDialog.ShowDialog() == DialogResult.OK)
-            {
-                trait = colorDialog.Color;
-                Invalidate(false);
-            }*/
             ChangeCouleur(Couleur.Trait);
         }
 
         private void buttonFond_Click(object sender, EventArgs e)
         {
-            /*colorDialog.Color = fond;
-            if(colorDialog.ShowDialog() == DialogResult.OK)
-            {
-                fond = colorDialog.Color;
-                Invalidate(false);
-            }*/
             ChangeCouleur(Couleur.Fond);
         }
 
         private void FicSpirographe_Paint(object sender, PaintEventArgs e)
         {
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             if (DessinSauve != null)
             {
                 Rectangle rectangle = new Rectangle(new Point(248,0), ClientSize);

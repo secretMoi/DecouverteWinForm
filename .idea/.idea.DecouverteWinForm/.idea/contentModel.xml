@@ -8,6 +8,21 @@
         <e p="App.config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="core" t="Include">
+          <e p="Elements" t="Include">
+            <e p="Bonhomme.cs" t="Include" />
+            <e p="Element.cs" t="Include" />
+          </e>
+          <e p="Figures" t="Include">
+            <e p="Arc.cs" t="Include" />
+            <e p="Cercle.cs" t="Include" />
+            <e p="Disque.cs" t="Include" />
+            <e p="Ellipse.cs" t="Include" />
+            <e p="Figure.cs" t="Include" />
+            <e p="Ligne.cs" t="Include" />
+            <e p="Polygone.cs" t="Include" />
+            <e p="Rectangle.cs" t="Include" />
+            <e p="Rotation.cs" t="Include" />
+          </e>
           <e p="FileGUI.cs" t="Include" />
           <e p="Ressource.cs" t="Include" />
         </e>
@@ -21,6 +36,9 @@
         <e p="FicEditeur.cs" t="Include" />
         <e p="FicEditeur.Designer.cs" t="Include" />
         <e p="FicEditeur.resx" t="Include" />
+        <e p="FicHorloge.cs" t="Include" />
+        <e p="FicHorloge.Designer.cs" t="Include" />
+        <e p="FicHorloge.resx" t="Include" />
         <e p="FicListe.cs" t="Include" />
         <e p="FicListe.Designer.cs" t="Include" />
         <e p="FicListe.resx" t="Include" />
@@ -33,6 +51,9 @@
         <e p="FicSpirographe.cs" t="Include" />
         <e p="FicSpirographe.Designer.cs" t="Include" />
         <e p="FicSpirographe.resx" t="Include" />
+        <e p="FicSpirographe2.cs" t="Include" />
+        <e p="FicSpirographe2.Designer.cs" t="Include" />
+        <e p="Horloge.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
