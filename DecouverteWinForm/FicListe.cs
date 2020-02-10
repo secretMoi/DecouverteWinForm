@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -100,13 +101,11 @@ namespace DecouverteWinForm
             string lecture;
             string[] lectureTemp;
             int n;
-            /*OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = @"Fichiers texte|*.txt|Tous fichiers|*.*";*/
+            
             FileGUI fileGui = new FileGUI();
             fileGui.AddFilter("Fichiers texte", "txt");
             fileGui.AddFilter("Tous les fichiers", "*");
-
-            //if (openFileDialog.ShowDialog() == DialogResult.OK)
+            
             if (fileGui.ShowDialog() == DialogResult.OK)
             {
                 listBoxPersonnes.Items.Clear();
@@ -136,6 +135,7 @@ namespace DecouverteWinForm
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
                 );
+                
                 return;
             }
             
@@ -147,7 +147,43 @@ namespace DecouverteWinForm
             );
 
             if (resulat == DialogResult.Yes)
-                listBoxPersonnes.Items.RemoveAt(listBoxPersonnes.SelectedIndex);
+            {
+                int dataCourante;
+                // contient le numéro d'encodage de la donnée à supprimer
+                int dataASupprimer = SendMessage(listBoxPersonnes.Handle, ListBoxLire, listBoxPersonnes.SelectedIndex, 0);
+                
+                // liste tous les éléments
+                for (int i = 0; i < listBoxPersonnes.Items.Count; i++)
+                {
+                    // récupère le numéro d'encodage de l'item courant
+                    dataCourante = SendMessage(listBoxPersonnes.Handle, ListBoxLire, i, 0);;
+                    
+                    // si le n° d'encodage est > au n° qui va être supprimé, on va le décaler de 1
+                    if (dataCourante > dataASupprimer)
+                    {
+                        dataCourante--; // décalage
+                        // on enregistre le nouveau n° d'encodage
+                        SendMessage(listBoxPersonnes.Handle, ListBoxEcrire, i, dataCourante);
+                    }
+                }
+
+                listBoxPersonnes.Items.RemoveAt(listBoxPersonnes.SelectedIndex); // supprime enfin l'item à supprimer
+
+                /*SendMessage(
+                    PointeurSurListBox,
+                    LireOuEcrire,
+                    idTrie,
+                    idEncodage
+                );
+                
+                //Pour récupérer un id d'encodage, on a juste besoin de l'id trié
+                int idEncodage = SendMessage(
+                    PointeurSurListBox,
+                    LireOuEcrire,
+                    idTrie,
+                    0 // 0 car on s'en fout vu qu'on le cherche
+                );*/
+            }
         }
     }
 }

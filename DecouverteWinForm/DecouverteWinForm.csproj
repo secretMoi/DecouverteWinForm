@@ -60,6 +60,12 @@
     <Compile Include="FicAPropos.Designer.cs">
       <DependentUpon>FicAPropos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FicEditeur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicEditeur.Designer.cs">
+      <DependentUpon>FicEditeur.cs</DependentUpon>
+    </Compile>
     <Compile Include="FicListe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FicAPropos.resx">
       <DependentUpon>FicAPropos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicEditeur.resx">
+      <DependentUpon>FicEditeur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FicListe.resx">
       <DependentUpon>FicListe.cs</DependentUpon>

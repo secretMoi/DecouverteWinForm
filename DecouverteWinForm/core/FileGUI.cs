@@ -15,6 +15,14 @@ namespace DecouverteWinForm.core
             else
                 fileDialog = new SaveFileDialog();
         }
+        public FileGUI(OpenFileDialog openFileDialog)
+        {
+            fileDialog = openFileDialog;
+        }
+        public FileGUI(SaveFileDialog saveFileDialog)
+        {
+            fileDialog = saveFileDialog;
+        }
 
         public void AddFilter(string texte, string extension)
         {

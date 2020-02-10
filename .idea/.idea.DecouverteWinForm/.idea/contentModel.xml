@@ -18,6 +18,9 @@
         <e p="FicAPropos.cs" t="Include" />
         <e p="FicAPropos.Designer.cs" t="Include" />
         <e p="FicAPropos.resx" t="Include" />
+        <e p="FicEditeur.cs" t="Include" />
+        <e p="FicEditeur.Designer.cs" t="Include" />
+        <e p="FicEditeur.resx" t="Include" />
         <e p="FicListe.cs" t="Include" />
         <e p="FicListe.Designer.cs" t="Include" />
         <e p="FicListe.resx" t="Include" />

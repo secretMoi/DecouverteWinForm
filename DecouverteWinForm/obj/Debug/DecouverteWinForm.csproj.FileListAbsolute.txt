@@ -14,3 +14,4 @@ C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\Decou
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicListe.resources
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\Resources\fond.jpg
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\Resources\volcan.png
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicEditeur.resources
