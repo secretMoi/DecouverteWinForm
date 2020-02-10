@@ -36,16 +36,17 @@ namespace DecouverteWinForm
             this.menuControleProgression = new System.Windows.Forms.ToolStripMenuItem();
             this.menuControleListe = new System.Windows.Forms.ToolStripMenuItem();
             this.menuControleEditeur = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuApplication = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuApplicationSpirographe = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAPropos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAProposAPropos = new System.Windows.Forms.ToolStripMenuItem();
+            this.spirographeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripMenu
             // 
             this.menuStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[]
-                {this.menuControle, this.menuApplication, this.menuAPropos});
+                {this.menuControle, this.menuApplicationSpirographe, this.menuAPropos});
             this.menuStripMenu.Location = new System.Drawing.Point(0, 0);
             this.menuStripMenu.Name = "menuStripMenu";
             this.menuStripMenu.Size = new System.Drawing.Size(416, 24);
@@ -81,11 +82,13 @@ namespace DecouverteWinForm
             this.menuControleEditeur.Text = "Editeur de texte";
             this.menuControleEditeur.Click += new System.EventHandler(this.menuControleEditeur_Click);
             // 
-            // menuApplication
+            // menuApplicationSpirographe
             // 
-            this.menuApplication.Name = "menuApplication";
-            this.menuApplication.Size = new System.Drawing.Size(85, 20);
-            this.menuApplication.Text = "Applications";
+            this.menuApplicationSpirographe.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[]
+                {this.spirographeToolStripMenuItem});
+            this.menuApplicationSpirographe.Name = "menuApplicationSpirographe";
+            this.menuApplicationSpirographe.Size = new System.Drawing.Size(85, 20);
+            this.menuApplicationSpirographe.Text = "Applications";
             // 
             // menuAPropos
             // 
@@ -100,6 +103,13 @@ namespace DecouverteWinForm
             this.menuAProposAPropos.Size = new System.Drawing.Size(122, 22);
             this.menuAProposAPropos.Text = "A propos";
             this.menuAProposAPropos.Click += new System.EventHandler(this.menuAProposAPropos_Click);
+            // 
+            // spirographeToolStripMenuItem
+            // 
+            this.spirographeToolStripMenuItem.Name = "spirographeToolStripMenuItem";
+            this.spirographeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.spirographeToolStripMenuItem.Text = "Spirographe";
+            this.spirographeToolStripMenuItem.Click += new System.EventHandler(this.spirographeToolStripMenuItem_Click);
             // 
             // FicPrincipal
             // 
@@ -122,10 +132,11 @@ namespace DecouverteWinForm
         private System.Windows.Forms.MenuStrip menuStripMenu;
         private System.Windows.Forms.ToolStripMenuItem menuControle;
         private System.Windows.Forms.ToolStripMenuItem menuControleProgression;
-        private System.Windows.Forms.ToolStripMenuItem menuApplication;
         private System.Windows.Forms.ToolStripMenuItem menuAPropos;
         private System.Windows.Forms.ToolStripMenuItem menuControleListe;
         private System.Windows.Forms.ToolStripMenuItem menuControleEditeur;
         private System.Windows.Forms.ToolStripMenuItem menuAProposAPropos;
+        private System.Windows.Forms.ToolStripMenuItem spirographeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuApplicationSpirographe;
     }
 }

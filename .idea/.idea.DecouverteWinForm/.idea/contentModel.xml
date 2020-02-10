@@ -30,6 +30,9 @@
         <e p="FicProgression.cs" t="Include" />
         <e p="FicProgression.Designer.cs" t="Include" />
         <e p="FicProgression.resx" t="Include" />
+        <e p="FicSpirographe.cs" t="Include" />
+        <e p="FicSpirographe.Designer.cs" t="Include" />
+        <e p="FicSpirographe.resx" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">

@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -84,6 +85,12 @@
     <Compile Include="FicProgression.Designer.cs">
       <DependentUpon>FicProgression.cs</DependentUpon>
     </Compile>
+    <Compile Include="FicSpirographe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicSpirographe.Designer.cs">
+      <DependentUpon>FicSpirographe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EcranAccueil.resx">
@@ -103,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FicProgression.resx">
       <DependentUpon>FicProgression.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicSpirographe.resx">
+      <DependentUpon>FicSpirographe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

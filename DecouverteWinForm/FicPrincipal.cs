@@ -38,5 +38,11 @@ namespace DecouverteWinForm
             FicEditeur fenetre = new FicEditeur();
             fenetre.ShowDialog(); // empêche de revenir à la fenêtre précédente
         }
+
+        private void spirographeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FicSpirographe fenetre = new FicSpirographe();
+            fenetre.ShowDialog(); // empêche de revenir à la fenêtre précédente
+        }
     }
 }
