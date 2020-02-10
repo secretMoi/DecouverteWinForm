@@ -90,7 +90,6 @@ namespace DecouverteWinForm
 
         private void menuFichierQuitter_Click(object sender, EventArgs e)
         {
-            VerifierSauver();
             Close();
         }
 
@@ -191,6 +190,11 @@ namespace DecouverteWinForm
         {
             if (fontDialog.ShowDialog() == DialogResult.OK)
                 richTextBoxTexte.SelectionFont = new Font(fontDialog.Font, fontDialog.Font.Style);
+        }
+
+        private void FicEditeur_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            VerifierSauver();
         }
     }
 }
