@@ -15,7 +15,7 @@ namespace DecouverteWinForm
             InitializeComponent();
             
             Figure.InitialiseConteneur(pictureBox);
-            graphique = new Graphique(new Point(ClientSize.Width / 2, ClientSize.Height / 2));
+            graphique = new Graphique(new Point(ClientSize.Width / 2, ClientSize.Height / 2), ClientSize);
             spirographe = new Spirographe();
             
             AjoutPoints();

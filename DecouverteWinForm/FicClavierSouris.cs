@@ -34,5 +34,41 @@ namespace DecouverteWinForm
         {
             Close();
         }
+
+        private void panelZoneSouris_MouseMove(object sender, MouseEventArgs e)
+        {
+            textBoxX.Text = e.X.ToString();
+            textBoxY.Text = e.Y.ToString();
+        }
+
+        private void panelZoneSouris_MouseDown(object sender, MouseEventArgs e)
+        {
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    nombreGauche++;
+                    break;
+                case MouseButtons.Right:
+                    nombreDroit++;
+                    break;
+            }
+            
+            RemplirSouris();
+        }
+
+        private void FicClavierSouris_KeyDown(object sender, KeyEventArgs e)
+        {
+            listBoxClavier.Items.Insert(0, "KeyDown : Code : " + e.KeyCode + ", Valeur : " + e.KeyValue);
+        }
+
+        private void FicClavierSouris_KeyUp(object sender, KeyEventArgs e)
+        {
+            listBoxClavier.Items.Insert(0, "KeyUp : Code : " + e.KeyCode + ", Valeur : " + e.KeyValue);
+        }
+
+        private void FicClavierSouris_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            listBoxClavier.Items.Insert(0, "KeyPress : Caractère : " + e.KeyChar);
+        }
     }
 }

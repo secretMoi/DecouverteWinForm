@@ -80,6 +80,10 @@ namespace DecouverteWinForm
             this.panelZoneSouris.Name = "panelZoneSouris";
             this.panelZoneSouris.Size = new System.Drawing.Size(298, 184);
             this.panelZoneSouris.TabIndex = 3;
+            this.panelZoneSouris.MouseDown +=
+                new System.Windows.Forms.MouseEventHandler(this.panelZoneSouris_MouseDown);
+            this.panelZoneSouris.MouseMove +=
+                new System.Windows.Forms.MouseEventHandler(this.panelZoneSouris_MouseMove);
             // 
             // labelGauche
             // 
@@ -158,11 +162,15 @@ namespace DecouverteWinForm
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.listBoxClavier);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FicClavierSouris";
             this.Text = "FicClavierSouris";
             this.Load += new System.EventHandler(this.FicClavierSouris_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FicClavierSouris_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FicClavierSouris_KeyPress);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FicClavierSouris_KeyUp);
             this.ResumeLayout(false);
             this.PerformLayout();
         }

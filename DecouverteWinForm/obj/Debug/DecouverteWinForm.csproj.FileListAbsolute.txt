@@ -18,3 +18,4 @@ C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\Decou
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.pdb
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicHorloge.resources
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicSpirographe2.resources
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicClavierSouris.resources

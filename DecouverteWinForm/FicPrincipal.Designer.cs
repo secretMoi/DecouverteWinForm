@@ -36,13 +36,13 @@ namespace DecouverteWinForm
             this.menuControleProgression = new System.Windows.Forms.ToolStripMenuItem();
             this.menuControleListe = new System.Windows.Forms.ToolStripMenuItem();
             this.menuControleEditeur = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuControlesClavierSouris = new System.Windows.Forms.ToolStripMenuItem();
             this.menuApplicationSpirographe = new System.Windows.Forms.ToolStripMenuItem();
             this.spirographeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuApplicationsHorloge = new System.Windows.Forms.ToolStripMenuItem();
             this.menuApplicationsSpinographe2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAPropos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAProposAPropos = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuControlesClavierSouris = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,6 +88,13 @@ namespace DecouverteWinForm
             this.menuControleEditeur.Text = "Editeur de texte";
             this.menuControleEditeur.Click += new System.EventHandler(this.menuControleEditeur_Click);
             // 
+            // menuControlesClavierSouris
+            // 
+            this.menuControlesClavierSouris.Name = "menuControlesClavierSouris";
+            this.menuControlesClavierSouris.Size = new System.Drawing.Size(182, 22);
+            this.menuControlesClavierSouris.Text = "Clavier/Souris";
+            this.menuControlesClavierSouris.Click += new System.EventHandler(this.menuControlesClavierSouris_Click);
+            // 
             // menuApplicationSpirographe
             // 
             this.menuApplicationSpirographe.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[]
@@ -130,13 +137,6 @@ namespace DecouverteWinForm
             this.menuAProposAPropos.Size = new System.Drawing.Size(122, 22);
             this.menuAProposAPropos.Text = "A propos";
             this.menuAProposAPropos.Click += new System.EventHandler(this.menuAProposAPropos_Click);
-            // 
-            // menuControlesClavierSouris
-            // 
-            this.menuControlesClavierSouris.Name = "menuControlesClavierSouris";
-            this.menuControlesClavierSouris.Size = new System.Drawing.Size(182, 22);
-            this.menuControlesClavierSouris.Text = "Clavier/Souris";
-            this.menuControlesClavierSouris.Click += new System.EventHandler(this.menuControlesClavierSouris_Click);
             // 
             // FicPrincipal
             // 

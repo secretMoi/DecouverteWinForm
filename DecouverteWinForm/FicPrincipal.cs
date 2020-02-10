@@ -59,7 +59,8 @@ namespace DecouverteWinForm
 
         private void menuControlesClavierSouris_Click(object sender, EventArgs e)
         {
-            FicClavierSouris ficClavierSouris = new FicClavierSouris();
+            FicClavierSouris fenetre = new FicClavierSouris();
+            fenetre.Show();
             
         }
     }

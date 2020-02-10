@@ -9,9 +9,13 @@ namespace DecouverteWinForm
         private Point offset;
         private static int compteur;
         private Dictionary<string, int> maximum;
+        private Size dimensionsFenetre;
+        private Size ajustementZoom;
         
-        public Graphique(Point position) : base(position)
+        public Graphique(Point position, Size dimensionsFenetre) : base(position)
         {
+            this.dimensionsFenetre = dimensionsFenetre;
+            
             Abscisse();
             
             maximum = new Dictionary<string, int>();
@@ -23,7 +27,7 @@ namespace DecouverteWinForm
 
         public void Abscisse()
         {
-            Dimensionne(1000, 6);
+            Dimensionne(1000, 4);
             
             position.X = 0;
             offset = position;
@@ -34,15 +38,18 @@ namespace DecouverteWinForm
 
         public void ListePoints(List<Point> points)
         {
+            TrouveMaximum(points);
+            Zoom();
+            
             for (int i = 0; i < points.Count; i++)
             {
-                Dimensionne(6, 6);
+                Dimensionne(6, 6); // définit la taille du point
                 position.X = points[i].X + offset.X - dimensions.X / 2;
                 position.Y = points[i].Y + offset.Y - dimensions.X / 2;
                 
                 AjouterDisque("Point" + compteur, Color.Blue);
 
-                if (i < points.Count - 1)
+                if (i < points.Count - 1) // si il y a un poitn suivant
                     Relier(points[i], points[i + 1]);
                 
                 compteur++;
@@ -70,10 +77,23 @@ namespace DecouverteWinForm
 
         private void TrouveMaximum(List<Point> points)
         {
+            maximum["gauche"] = points[0].X;
+            maximum["droite"] = points[points.Count - 1].X;
+            
             foreach (Point point in points)
             {
-                
+                if (point.Y < maximum["bas"]) maximum["bas"] = point.Y;
+                if (point.Y > maximum["haut"]) maximum["haut"] = point.Y;
             }
+        }
+
+        private void Zoom()
+        {
+            int deltaHauteur = maximum["haut"] - maximum["bas"];
+            int deltaLargeur = maximum["droite"] - maximum["gauche"];
+            
+            ajustementZoom.Height = dimensionsFenetre.Height / deltaHauteur;
+            ajustementZoom.Width = dimensionsFenetre.Width / deltaLargeur;
         }
     }
 }
