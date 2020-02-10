@@ -33,18 +33,13 @@ namespace DecouverteWinForm
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(EcranEditeur));
+                new System.ComponentModel.ComponentResourceManager(typeof(FicEditeur));
             this.menuStripCommande = new System.Windows.Forms.MenuStrip();
-            this.panelCommande = new System.Windows.Forms.Panel();
-            this.richTextBoxTexte = new System.Windows.Forms.RichTextBox();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.fontDialog = new System.Windows.Forms.FontDialog();
             this.menuFichier = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFichierNouveau = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuFichierOuvrir = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFichierEnregistrer = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuFichierQuitter = new System.Windows.Forms.ToolStripMenuItem();
             this.mEditer = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,25 +48,30 @@ namespace DecouverteWinForm
             this.menuEditerColler = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFormater = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFormaterJustifier = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuFormaterCaractere = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuFormaterPolice = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFormaterJustifierGauche = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFormaterJustifierDroite = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFormaterJustifierCentre = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuFormaterCaractere = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFormaterCaractereGras = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFormaterCaractereItalique = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFormaterCaractereSouligne = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFormaterCaractereBarre = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBoxNouveau = new System.Windows.Forms.PictureBox();
-            this.pictureBoxOuvrir = new System.Windows.Forms.PictureBox();
-            this.pictureBoxEnregistrer = new System.Windows.Forms.PictureBox();
+            this.menuFormaterPolice = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelCommande = new System.Windows.Forms.Panel();
             this.pictureBoxQuitter = new System.Windows.Forms.PictureBox();
+            this.pictureBoxEnregistrer = new System.Windows.Forms.PictureBox();
+            this.pictureBoxOuvrir = new System.Windows.Forms.PictureBox();
+            this.pictureBoxNouveau = new System.Windows.Forms.PictureBox();
+            this.richTextBoxTexte = new System.Windows.Forms.RichTextBox();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.fontDialog = new System.Windows.Forms.FontDialog();
             this.menuStripCommande.SuspendLayout();
             this.panelCommande.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxNouveau)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxOuvrir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxEnregistrer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxQuitter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxEnregistrer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxOuvrir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxNouveau)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStripCommande
@@ -83,31 +83,6 @@ namespace DecouverteWinForm
             this.menuStripCommande.Size = new System.Drawing.Size(933, 24);
             this.menuStripCommande.TabIndex = 0;
             this.menuStripCommande.Text = "menuStrip1";
-            // 
-            // panelCommande
-            // 
-            this.panelCommande.Controls.Add(this.pictureBoxQuitter);
-            this.panelCommande.Controls.Add(this.pictureBoxEnregistrer);
-            this.panelCommande.Controls.Add(this.pictureBoxOuvrir);
-            this.panelCommande.Controls.Add(this.pictureBoxNouveau);
-            this.panelCommande.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCommande.Location = new System.Drawing.Point(0, 24);
-            this.panelCommande.Name = "panelCommande";
-            this.panelCommande.Size = new System.Drawing.Size(933, 32);
-            this.panelCommande.TabIndex = 1;
-            // 
-            // richTextBoxTexte
-            // 
-            this.richTextBoxTexte.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBoxTexte.Location = new System.Drawing.Point(0, 56);
-            this.richTextBoxTexte.Name = "richTextBoxTexte";
-            this.richTextBoxTexte.Size = new System.Drawing.Size(933, 463);
-            this.richTextBoxTexte.TabIndex = 2;
-            this.richTextBoxTexte.Text = "";
-            // 
-            // openFileDialog
-            // 
-            this.openFileDialog.FileName = "openFileDialog1";
             // 
             // menuFichier
             // 
@@ -125,23 +100,26 @@ namespace DecouverteWinForm
             this.menuFichierNouveau.Name = "menuFichierNouveau";
             this.menuFichierNouveau.Size = new System.Drawing.Size(152, 22);
             this.menuFichierNouveau.Text = "Nouveau";
+            this.menuFichierNouveau.Click += new System.EventHandler(this.menuFichierNouveau_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
             // 
             // menuFichierOuvrir
             // 
             this.menuFichierOuvrir.Name = "menuFichierOuvrir";
             this.menuFichierOuvrir.Size = new System.Drawing.Size(152, 22);
             this.menuFichierOuvrir.Text = "Ouvrir";
+            this.menuFichierOuvrir.Click += new System.EventHandler(this.menuFichierOuvrir_Click);
             // 
             // menuFichierEnregistrer
             // 
             this.menuFichierEnregistrer.Name = "menuFichierEnregistrer";
             this.menuFichierEnregistrer.Size = new System.Drawing.Size(152, 22);
             this.menuFichierEnregistrer.Text = "Enregistrer";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.menuFichierEnregistrer.Click += new System.EventHandler(this.menuFichierEnregistrer_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -153,6 +131,7 @@ namespace DecouverteWinForm
             this.menuFichierQuitter.Name = "menuFichierQuitter";
             this.menuFichierQuitter.Size = new System.Drawing.Size(152, 22);
             this.menuFichierQuitter.Text = "Quitter";
+            this.menuFichierQuitter.Click += new System.EventHandler(this.menuFichierQuitter_Click);
             // 
             // mEditer
             // 
@@ -167,18 +146,21 @@ namespace DecouverteWinForm
             this.menuEditerCopier.Name = "menuEditerCopier";
             this.menuEditerCopier.Size = new System.Drawing.Size(152, 22);
             this.menuEditerCopier.Text = "Copier";
+            this.menuEditerCopier.Click += new System.EventHandler(this.menuEditerCopier_Click);
             // 
             // menuEditerCouper
             // 
             this.menuEditerCouper.Name = "menuEditerCouper";
             this.menuEditerCouper.Size = new System.Drawing.Size(152, 22);
             this.menuEditerCouper.Text = "Couper";
+            this.menuEditerCouper.Click += new System.EventHandler(this.menuEditerCouper_Click);
             // 
             // menuEditerColler
             // 
             this.menuEditerColler.Name = "menuEditerColler";
             this.menuEditerColler.Size = new System.Drawing.Size(152, 22);
             this.menuEditerColler.Text = "Coller";
+            this.menuEditerColler.Click += new System.EventHandler(this.menuEditerColler_Click);
             // 
             // menuFormater
             // 
@@ -196,6 +178,27 @@ namespace DecouverteWinForm
             this.menuFormaterJustifier.Size = new System.Drawing.Size(152, 22);
             this.menuFormaterJustifier.Text = "Justifier";
             // 
+            // menuFormaterJustifierGauche
+            // 
+            this.menuFormaterJustifierGauche.Name = "menuFormaterJustifierGauche";
+            this.menuFormaterJustifierGauche.Size = new System.Drawing.Size(152, 22);
+            this.menuFormaterJustifierGauche.Text = "Gauche";
+            this.menuFormaterJustifierGauche.Click += new System.EventHandler(this.menuFormaterJustifierGauche_Click);
+            // 
+            // menuFormaterJustifierDroite
+            // 
+            this.menuFormaterJustifierDroite.Name = "menuFormaterJustifierDroite";
+            this.menuFormaterJustifierDroite.Size = new System.Drawing.Size(152, 22);
+            this.menuFormaterJustifierDroite.Text = "Droite";
+            this.menuFormaterJustifierDroite.Click += new System.EventHandler(this.menuFormaterJustifierDroite_Click);
+            // 
+            // menuFormaterJustifierCentre
+            // 
+            this.menuFormaterJustifierCentre.Name = "menuFormaterJustifierCentre";
+            this.menuFormaterJustifierCentre.Size = new System.Drawing.Size(152, 22);
+            this.menuFormaterJustifierCentre.Text = "Centré";
+            this.menuFormaterJustifierCentre.Click += new System.EventHandler(this.menuFormaterJustifierCentre_Click);
+            // 
             // menuFormaterCaractere
             // 
             this.menuFormaterCaractere.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[]
@@ -207,35 +210,12 @@ namespace DecouverteWinForm
             this.menuFormaterCaractere.Size = new System.Drawing.Size(152, 22);
             this.menuFormaterCaractere.Text = "Caractère";
             // 
-            // menuFormaterPolice
-            // 
-            this.menuFormaterPolice.Name = "menuFormaterPolice";
-            this.menuFormaterPolice.Size = new System.Drawing.Size(152, 22);
-            this.menuFormaterPolice.Text = "Police";
-            // 
-            // menuFormaterJustifierGauche
-            // 
-            this.menuFormaterJustifierGauche.Name = "menuFormaterJustifierGauche";
-            this.menuFormaterJustifierGauche.Size = new System.Drawing.Size(152, 22);
-            this.menuFormaterJustifierGauche.Text = "Gauche";
-            // 
-            // menuFormaterJustifierDroite
-            // 
-            this.menuFormaterJustifierDroite.Name = "menuFormaterJustifierDroite";
-            this.menuFormaterJustifierDroite.Size = new System.Drawing.Size(152, 22);
-            this.menuFormaterJustifierDroite.Text = "Droite";
-            // 
-            // menuFormaterJustifierCentre
-            // 
-            this.menuFormaterJustifierCentre.Name = "menuFormaterJustifierCentre";
-            this.menuFormaterJustifierCentre.Size = new System.Drawing.Size(152, 22);
-            this.menuFormaterJustifierCentre.Text = "Centré";
-            // 
             // menuFormaterCaractereGras
             // 
             this.menuFormaterCaractereGras.Name = "menuFormaterCaractereGras";
             this.menuFormaterCaractereGras.Size = new System.Drawing.Size(152, 22);
             this.menuFormaterCaractereGras.Text = "Gras";
+            this.menuFormaterCaractereGras.Click += new System.EventHandler(this.menuFormaterCaractereGras_Click);
             // 
             // menuFormaterCaractereItalique
             // 
@@ -249,32 +229,45 @@ namespace DecouverteWinForm
             this.menuFormaterCaractereSouligne.Name = "menuFormaterCaractereSouligne";
             this.menuFormaterCaractereSouligne.Size = new System.Drawing.Size(152, 22);
             this.menuFormaterCaractereSouligne.Text = "Souligné";
+            this.menuFormaterCaractereSouligne.Click +=
+                new System.EventHandler(this.menuFormaterCaractereSouligne_Click);
             // 
             // menuFormaterCaractereBarre
             // 
             this.menuFormaterCaractereBarre.Name = "menuFormaterCaractereBarre";
             this.menuFormaterCaractereBarre.Size = new System.Drawing.Size(152, 22);
             this.menuFormaterCaractereBarre.Text = "Barré";
+            this.menuFormaterCaractereBarre.Click += new System.EventHandler(this.menuFormaterCaractereBarre_Click);
             // 
-            // pictureBoxNouveau
+            // menuFormaterPolice
             // 
-            this.pictureBoxNouveau.Image = ((System.Drawing.Image) (resources.GetObject("pictureBoxNouveau.Image")));
-            this.pictureBoxNouveau.Location = new System.Drawing.Point(3, 3);
-            this.pictureBoxNouveau.Name = "pictureBoxNouveau";
-            this.pictureBoxNouveau.Size = new System.Drawing.Size(27, 27);
-            this.pictureBoxNouveau.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxNouveau.TabIndex = 0;
-            this.pictureBoxNouveau.TabStop = false;
+            this.menuFormaterPolice.Name = "menuFormaterPolice";
+            this.menuFormaterPolice.Size = new System.Drawing.Size(152, 22);
+            this.menuFormaterPolice.Text = "Police";
+            this.menuFormaterPolice.Click += new System.EventHandler(this.menuFormaterPolice_Click);
             // 
-            // pictureBoxOuvrir
+            // panelCommande
             // 
-            this.pictureBoxOuvrir.Image = ((System.Drawing.Image) (resources.GetObject("pictureBoxOuvrir.Image")));
-            this.pictureBoxOuvrir.Location = new System.Drawing.Point(36, 3);
-            this.pictureBoxOuvrir.Name = "pictureBoxOuvrir";
-            this.pictureBoxOuvrir.Size = new System.Drawing.Size(27, 27);
-            this.pictureBoxOuvrir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxOuvrir.TabIndex = 1;
-            this.pictureBoxOuvrir.TabStop = false;
+            this.panelCommande.Controls.Add(this.pictureBoxQuitter);
+            this.panelCommande.Controls.Add(this.pictureBoxEnregistrer);
+            this.panelCommande.Controls.Add(this.pictureBoxOuvrir);
+            this.panelCommande.Controls.Add(this.pictureBoxNouveau);
+            this.panelCommande.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelCommande.Location = new System.Drawing.Point(0, 24);
+            this.panelCommande.Name = "panelCommande";
+            this.panelCommande.Size = new System.Drawing.Size(933, 32);
+            this.panelCommande.TabIndex = 1;
+            // 
+            // pictureBoxQuitter
+            // 
+            this.pictureBoxQuitter.Image = ((System.Drawing.Image) (resources.GetObject("pictureBoxQuitter.Image")));
+            this.pictureBoxQuitter.Location = new System.Drawing.Point(101, 3);
+            this.pictureBoxQuitter.Name = "pictureBoxQuitter";
+            this.pictureBoxQuitter.Size = new System.Drawing.Size(27, 27);
+            this.pictureBoxQuitter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxQuitter.TabIndex = 3;
+            this.pictureBoxQuitter.TabStop = false;
+            this.pictureBoxQuitter.Click += new System.EventHandler(this.menuFichierQuitter_Click);
             // 
             // pictureBoxEnregistrer
             // 
@@ -286,18 +279,45 @@ namespace DecouverteWinForm
             this.pictureBoxEnregistrer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxEnregistrer.TabIndex = 2;
             this.pictureBoxEnregistrer.TabStop = false;
+            this.pictureBoxEnregistrer.Click += new System.EventHandler(this.menuFichierEnregistrer_Click);
             // 
-            // pictureBoxQuitter
+            // pictureBoxOuvrir
             // 
-            this.pictureBoxQuitter.Image = ((System.Drawing.Image) (resources.GetObject("pictureBoxQuitter.Image")));
-            this.pictureBoxQuitter.Location = new System.Drawing.Point(102, 3);
-            this.pictureBoxQuitter.Name = "pictureBoxQuitter";
-            this.pictureBoxQuitter.Size = new System.Drawing.Size(27, 27);
-            this.pictureBoxQuitter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxQuitter.TabIndex = 3;
-            this.pictureBoxQuitter.TabStop = false;
+            this.pictureBoxOuvrir.Image = ((System.Drawing.Image) (resources.GetObject("pictureBoxOuvrir.Image")));
+            this.pictureBoxOuvrir.Location = new System.Drawing.Point(36, 3);
+            this.pictureBoxOuvrir.Name = "pictureBoxOuvrir";
+            this.pictureBoxOuvrir.Size = new System.Drawing.Size(27, 27);
+            this.pictureBoxOuvrir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxOuvrir.TabIndex = 1;
+            this.pictureBoxOuvrir.TabStop = false;
+            this.pictureBoxOuvrir.Click += new System.EventHandler(this.menuFichierOuvrir_Click);
             // 
-            // EcranEditeur
+            // pictureBoxNouveau
+            // 
+            this.pictureBoxNouveau.Image = ((System.Drawing.Image) (resources.GetObject("pictureBoxNouveau.Image")));
+            this.pictureBoxNouveau.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxNouveau.Name = "pictureBoxNouveau";
+            this.pictureBoxNouveau.Size = new System.Drawing.Size(27, 27);
+            this.pictureBoxNouveau.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxNouveau.TabIndex = 0;
+            this.pictureBoxNouveau.TabStop = false;
+            this.pictureBoxNouveau.Click += new System.EventHandler(this.menuFichierNouveau_Click);
+            // 
+            // richTextBoxTexte
+            // 
+            this.richTextBoxTexte.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxTexte.Location = new System.Drawing.Point(0, 56);
+            this.richTextBoxTexte.Name = "richTextBoxTexte";
+            this.richTextBoxTexte.Size = new System.Drawing.Size(933, 463);
+            this.richTextBoxTexte.TabIndex = 2;
+            this.richTextBoxTexte.Text = "";
+            this.richTextBoxTexte.TextChanged += new System.EventHandler(this.richTextBoxTexte_TextChanged);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            // 
+            // FicEditeur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -306,16 +326,15 @@ namespace DecouverteWinForm
             this.Controls.Add(this.panelCommande);
             this.Controls.Add(this.menuStripCommande);
             this.MainMenuStrip = this.menuStripCommande;
-            this.Name = "EcranEditeur";
+            this.Name = "FicEditeur";
             this.Text = "Traitement de texte";
-            this.Load += new System.EventHandler(this.EcranEditeur_Load);
             this.menuStripCommande.ResumeLayout(false);
             this.menuStripCommande.PerformLayout();
             this.panelCommande.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxNouveau)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxOuvrir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxEnregistrer)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxQuitter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxEnregistrer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxOuvrir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxNouveau)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
@@ -326,7 +345,6 @@ namespace DecouverteWinForm
         private System.Windows.Forms.MenuStrip menuStripCommande;
         private System.Windows.Forms.FontDialog fontDialog;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.RichTextBox richTextBoxTexte;
         private System.Windows.Forms.ToolStripMenuItem menuFormaterCaractere;
         private System.Windows.Forms.ToolStripMenuItem menuFormaterPolice;
@@ -354,5 +372,6 @@ namespace DecouverteWinForm
         private System.Windows.Forms.PictureBox pictureBoxOuvrir;
         private System.Windows.Forms.PictureBox pictureBoxEnregistrer;
         private System.Windows.Forms.PictureBox pictureBoxQuitter;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }

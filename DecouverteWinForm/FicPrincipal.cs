@@ -32,5 +32,11 @@ namespace DecouverteWinForm
             FicListe fenetre = new FicListe();
             fenetre.ShowDialog(); // empêche de revenir à la fenêtre précédente
         }
+        
+        private void menuControleEditeur_Click(object sender, EventArgs e)
+        {
+            FicEditeur fenetre = new FicEditeur();
+            fenetre.ShowDialog(); // empêche de revenir à la fenêtre précédente
+        }
     }
 }

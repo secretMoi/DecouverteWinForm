@@ -79,7 +79,7 @@ namespace DecouverteWinForm
             this.menuControleEditeur.Name = "menuControleEditeur";
             this.menuControleEditeur.Size = new System.Drawing.Size(182, 22);
             this.menuControleEditeur.Text = "Editeur de texte";
-            this.menuControleEditeur.Click += new System.EventHandler(this.NonImplemente);
+            this.menuControleEditeur.Click += new System.EventHandler(this.menuControleEditeur_Click);
             // 
             // menuApplication
             // 

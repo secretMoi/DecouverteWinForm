@@ -16,7 +16,6 @@ namespace DecouverteWinForm
             
             liste = new List<Image>();
             
-            //todo ajouter volcan aux ressources ou faire sa propre classe
             //liste.Add(Resources.fond);
             //liste.Add(Resources.volcan);
             liste.Add(Ressource.GetImage("fond.jpg"));
