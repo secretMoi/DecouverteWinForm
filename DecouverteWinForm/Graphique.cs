@@ -18,6 +18,7 @@ namespace DecouverteWinForm
         public Graphique(Point position, Size dimensionsFenetre) : base(position)
         {
             this.dimensionsFenetre = dimensionsFenetre;
+            compteur = 0;
             
             //Abscisse();
             
@@ -44,44 +45,20 @@ namespace DecouverteWinForm
             TrouveMaximum(points);
             Zoom();
             Centre(points);
-            
-            /*for (int i = 0; i < points.Count; i++)
-            {
-                Dimensionne(6, 6); // définit la taille du point
-                
-                position.X = points[i].X + offset.X - dimensions.X / 2;
-                position.Y = points[i].Y + offset.Y - dimensions.X / 2;
-                /*position.X = (int) (points[i].X * 1) - maximum["gauche"];
-                position.Y = (int) (points[i].Y * 1) - maximum["bas"];*
-                position = points[i];
-                
-                AjouterDisque("Point" + compteur, Color.Blue);
-
-                /*if (i < points.Count - 1) // si il y a un poitn suivant
-                    Relier(points[i], points[i + 1]);*
-                
-                compteur++;
-            }*/
         }
 
         private void Centre(List<PointF> points)
         {
-            PointF centreFenetre = new PointF(dimensionsFenetre.Width / 2, dimensionsFenetre.Height / 2);
+            Dimensionne(6, 6); // définit la taille du point
             
             for (int i = 0; i < points.Count; i++)
             {
-                Dimensionne(6, 6); // définit la taille du point
-
-                /*position.X = points[i].X + centreFenetre.X - deltaMaximum.Width / 2;
-                position.Y = points[i].Y + centreFenetre.Y;*/
-
                 position = CastPointToInt(points[i]);
-                //position = points[i];
-                //position.Y =  points[i].Y * (int)ajustementZoom.Y + centreFenetre.Y + 70;
-                position.X = (int) (position.X * ajustementZoom.X +
+
+                position.X = (int) (position.X * ajustementZoom.X -
                                     maximum["gauche"] * ajustementZoom.X +
-                                    dimensions.X
-                    );
+                                    dimensions.X);
+                // étire + réajuste avec le décalage étiré
                 position.Y = (int) (position.Y * ajustementZoom.Y +
                                     (-maximum["bas"]) * ajustementZoom.Y +
                                     dimensions.X);
@@ -94,32 +71,21 @@ namespace DecouverteWinForm
             Relier();
         }
 
-        private void AjusteY()
-        {
-            
-        }
-
-        private void Relier(/*Point pointSource, Point pointDestination*/)
+        private void Relier()
         {
             List<Figure> liste = ListeElements();
             
-            for (int i = 0; i < compteur; i++)
+            for (int i = 0; i < compteur - 1; i++)
             {
-                if (i < compteur - 1) // si il y a un point suivant
-                {
-                    dimensions = liste[i].Position;
-                    position = liste[i+1].Position;
-                    
-                    AjouterLigne("Ligne" + i, Color.Blue, 3);
-                }
+                dimensions = liste[i].Position;
+                dimensions.X += 3;
+                dimensions.Y += 3;
+                position = liste[i + 1].Position;
+                position.X += 3;
+                position.Y += 3;
+                
+                AjouterLigne("Ligne" + i, Color.Blue, 3);
             }
-            /*dimensions = pointSource;
-            //dimensions = Offset(dimensions);
-            
-            position = pointDestination;
-            //position = Offset(position);
-
-            AjouterLigne("Ligne" + compteur, Color.Blue, 3);*/
         }
 
         private PointF Offset(PointF point)
