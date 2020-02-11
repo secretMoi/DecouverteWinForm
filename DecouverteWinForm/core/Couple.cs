@@ -8,7 +8,7 @@ namespace DecouverteWinForm.core
         private PointF couple;
         private const float margeErreur = Single.Epsilon;
 
-        public Couple(PointF point = default)
+        public Couple(PointF point)
         {
             couple = point;
         }
@@ -23,6 +23,11 @@ namespace DecouverteWinForm.core
         public Couple(int x, int y)
         {
             couple = new PointF(x, y);
+        }
+
+        public static Couple Vide()
+        {
+            return new Couple(0, 0);
         }
         
         public static Couple operator +(Couple couple1, Couple couple2)
@@ -63,6 +68,16 @@ namespace DecouverteWinForm.core
             );
             
             return coupleResultat; 
+        }
+
+        public static Couple ToCouple(Point point)
+        {
+            return new Couple(point);
+        }
+
+        public Point ToPoint()
+        {
+            return new Point((int) X, (int) Y);
         }
 
         public float X

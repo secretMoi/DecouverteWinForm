@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
+using DecouverteWinForm.core;
 using DecouverteWinForm.Core.Elements;
 using DecouverteWinForm.Core.Figures;
 
@@ -35,7 +36,7 @@ namespace DecouverteWinForm
             AjouterRectangle("Abscisse", Color.Red);
         }
 
-        public void ListePoints(List<PointF> points)
+        public void ListePoints(List<Couple> points)
         {
             TrouveMaximum(points);
             Zoom();
@@ -44,13 +45,13 @@ namespace DecouverteWinForm
             Relier();
         }
 
-        private void PlacePoints(List<PointF> points)
+        private void PlacePoints(List<Couple> points)
         {
             Dimensionne(6, 6); // définit la taille du point
             
             for (int i = 0; i < points.Count; i++)
             {
-                position = CastPointToInt(points[i]);
+                position = CastPointToInt(points[i]).ToPoint();
                 position = Positionne(position);
 
                 AjouterDisque("Point" + compteur, Color.Blue);
@@ -68,13 +69,13 @@ namespace DecouverteWinForm
             return point;
         }
 
-        private int PositionneX(int x, int decalage = 0)
+        private int PositionneX(float x, float decalage = 0)
         {
-            return (int) (position.X * ajustementZoom.X -
+            return (int) (x * ajustementZoom.X -
                           maximum["gauche"] * ajustementZoom.X +
                           decalage);
         }
-        private int PositionneY(int y, int decalage = 0)
+        private int PositionneY(float y, float decalage = 0)
         {
             return (int) (y * ajustementZoom.Y +
                           (-maximum["bas"]) * ajustementZoom.Y +
@@ -98,12 +99,12 @@ namespace DecouverteWinForm
             }
         }
 
-        private void TrouveMaximum(List<PointF> points)
+        private void TrouveMaximum(List<Couple> points)
         {
             maximum["gauche"] = points[0].X;
             maximum["droite"] = points[points.Count - 1].X;
             
-            foreach (PointF point in points)
+            foreach (Couple point in points)
             {
                 if (point.Y < maximum["bas"]) maximum["bas"] = point.Y;
                 if (point.Y > maximum["haut"]) maximum["haut"] = point.Y;
@@ -119,13 +120,13 @@ namespace DecouverteWinForm
             deltaMaximum.Width = (int) (maximum["droite"] - maximum["gauche"]);
             
             // tailleFenetre / delta => facteur de zoom
-            ajustementZoom.Y = (float) dimensionsFenetre.Height / deltaMaximum.Height * 0.95f;
-            ajustementZoom.X = (float) dimensionsFenetre.Width / deltaMaximum.Width * 0.95f;
+            ajustementZoom.Y = (float) dimensionsFenetre.Height / deltaMaximum.Height * 0.97f;
+            ajustementZoom.X = (float) dimensionsFenetre.Width / deltaMaximum.Width * 0.97f;
         }
         
-        private Point CastPointToInt(PointF pointFloat)
+        private Couple CastPointToInt(Couple pointFloat)
         {
-            return new Point((int) pointFloat.X, (int) pointFloat.Y);
+            return new Couple((int) pointFloat.X, (int) pointFloat.Y);
         }
     }
 }

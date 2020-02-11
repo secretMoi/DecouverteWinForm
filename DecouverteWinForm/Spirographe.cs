@@ -1,18 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
+using DecouverteWinForm.core;
 
 namespace DecouverteWinForm
 {
     public class Spirographe
     {
-        private List<PointF> points;
+        private List<Couple> points;
         
         public Spirographe()
         {
-            points = new List<PointF>();
+            points = new List<Couple>();
         }
 
-        public bool Add(PointF point)
+        public bool Add(Couple point)
         {
             if (!EstValide(point)) return false;
 
@@ -23,12 +24,12 @@ namespace DecouverteWinForm
         
         public bool Add(int x, int y)
         {
-            Point point = new Point(x, y);
+            Couple point = new Couple(x, y);
 
             return Add(point);
         }
 
-        public bool EstValide(PointF point)
+        public bool EstValide(Couple point)
         {
             if (point.Y < -100 || point.Y > 100) return false;
             if (points.Count > 0 && point.X <= points[points.Count - 1].X) return false;
@@ -36,17 +37,17 @@ namespace DecouverteWinForm
             return true;
         }
 
-        public List<PointF> Liste()
+        public List<Couple> Liste()
         {
             return points;
         }
 
-        public List<PointF> InverseY()
+        public List<Couple> InverseY()
         {
-            List<PointF> pointsInverse = new List<PointF>();
+            List<Couple> pointsInverse = new List<Couple>();
             for (int i = 0; i < points.Count; i++)
             {
-                PointF point = points[i];
+                Couple point = points[i];
                 point.Y = -point.Y;
                 
                 pointsInverse.Add(point);
