@@ -23,7 +23,11 @@ namespace DecouverteWinForm
 
         private void AjoutPoints()
         {
-            Random rand = new Random();
+            spirographe.Add(0, 0);
+            spirographe.Add(50, -50);
+            spirographe.Add(100, 100);
+            
+            /*Random rand = new Random();
             int nombre = rand.Next(2, 20);
 
             int x = 0, y = 0;
@@ -34,7 +38,7 @@ namespace DecouverteWinForm
                 y = rand.Next(-100, 100);
 
                 spirographe.Add(x, y);
-            }
+            }*/
         }
 
         private void pictureBox_Paint(object sender, PaintEventArgs e)

@@ -5,14 +5,14 @@ namespace DecouverteWinForm
 {
     public class Spirographe
     {
-        private List<Point> points;
+        private List<PointF> points;
         
         public Spirographe()
         {
-            points = new List<Point>();
+            points = new List<PointF>();
         }
 
-        public bool Add(Point point)
+        public bool Add(PointF point)
         {
             if (!EstValide(point)) return false;
 
@@ -28,24 +28,24 @@ namespace DecouverteWinForm
             return Add(point);
         }
 
-        public static bool EstValide(Point point)
+        public static bool EstValide(PointF point)
         {
             if (point.Y < -100 || point.Y > 100) return false;
 
             return true;
         }
 
-        public List<Point> Liste()
+        public List<PointF> Liste()
         {
             return points;
         }
 
-        public List<Point> InverseY()
+        public List<PointF> InverseY()
         {
-            List<Point> pointsInverse = new List<Point>();
+            List<PointF> pointsInverse = new List<PointF>();
             for (int i = 0; i < points.Count; i++)
             {
-                Point point = points[i];
+                PointF point = points[i];
                 point.Y = -point.Y;
                 
                 pointsInverse.Add(point);
