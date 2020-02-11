@@ -8,6 +8,7 @@
         <e p="App.config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="core" t="Include">
+          <e p="Couple.cs" t="Include" />
           <e p="Elements" t="Include">
             <e p="Bonhomme.cs" t="Include" />
             <e p="Element.cs" t="Include" />

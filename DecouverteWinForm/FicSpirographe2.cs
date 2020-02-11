@@ -30,7 +30,7 @@ namespace DecouverteWinForm
             spirographe.Add(100, 100);*/
             
             Random rand = new Random();
-            int nombre = rand.Next(2, 20);
+            int nombre = rand.Next(2, 21);
 
             int x = 0, y = 0;
 

@@ -28,9 +28,10 @@ namespace DecouverteWinForm
             return Add(point);
         }
 
-        public static bool EstValide(PointF point)
+        public bool EstValide(PointF point)
         {
             if (point.Y < -100 || point.Y > 100) return false;
+            if (points.Count > 0 && point.X <= points[points.Count - 1].X) return false;
 
             return true;
         }

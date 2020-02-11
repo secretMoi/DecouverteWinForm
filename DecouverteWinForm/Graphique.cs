@@ -30,7 +30,6 @@ namespace DecouverteWinForm
             Dimensionne(dimensionsFenetre.Width, 4);
             
             position.X = 0;
-            position.Y = 0;
             position.Y = PositionneY(0, dimensions.Y / 2);
             
             AjouterRectangle("Abscisse", Color.Red);
