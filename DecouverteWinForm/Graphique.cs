@@ -3,25 +3,21 @@ using System.Drawing;
 using DecouverteWinForm.Core.Elements;
 using DecouverteWinForm.Core.Figures;
 
-//todo class Axis
 namespace DecouverteWinForm
 {
     public class Graphique : Element
     {
         private Point offset;
-        private static int compteur;
-        private Dictionary<string, float> maximum;
+        private int compteur;
+        private readonly Dictionary<string, float> maximum;
         private Size dimensionsFenetre;
         private PointF ajustementZoom;
-        private Size deltaMaximum;
-        
+
         public Graphique(Point position, Size dimensionsFenetre) : base(position)
         {
             this.dimensionsFenetre = dimensionsFenetre;
             compteur = 0;
-            
-            //Abscisse();
-            
+
             maximum = new Dictionary<string, float>();
             maximum.Add("gauche", 0);
             maximum.Add("haut", 0);
@@ -34,8 +30,8 @@ namespace DecouverteWinForm
             Dimensionne(dimensionsFenetre.Width, 4);
             
             position.X = 0;
-            //offset = position;
-            position.Y -= dimensions.Y / 2;
+            position.Y = 0;
+            position.Y = PositionneY(0, dimensions.Y / 2);
             
             AjouterRectangle("Abscisse", Color.Red);
         }
@@ -44,31 +40,46 @@ namespace DecouverteWinForm
         {
             TrouveMaximum(points);
             Zoom();
-            Centre(points);
+            PlacePoints(points);
+            Abscisse();
+            Relier();
         }
 
-        private void Centre(List<PointF> points)
+        private void PlacePoints(List<PointF> points)
         {
             Dimensionne(6, 6); // définit la taille du point
             
             for (int i = 0; i < points.Count; i++)
             {
                 position = CastPointToInt(points[i]);
-
-                position.X = (int) (position.X * ajustementZoom.X -
-                                    maximum["gauche"] * ajustementZoom.X +
-                                    dimensions.X);
-                // étire + réajuste avec le décalage étiré
-                position.Y = (int) (position.Y * ajustementZoom.Y +
-                                    (-maximum["bas"]) * ajustementZoom.Y +
-                                    dimensions.X);
+                position = Positionne(position);
 
                 AjouterDisque("Point" + compteur, Color.Blue);
 
                 compteur++;
             }
-            
-            Relier();
+        }
+
+        private Point Positionne(Point point, Point decalage = default)
+        {
+            // étire + réajuste avec le décalage étiré
+            point.X = PositionneX(point.X, decalage.X);
+            point.Y = PositionneY(point.Y, decalage.Y);
+
+            return point;
+        }
+
+        private int PositionneX(int x, int decalage = 0)
+        {
+            return (int) (position.X * ajustementZoom.X -
+                          maximum["gauche"] * ajustementZoom.X +
+                          decalage);
+        }
+        private int PositionneY(int y, int decalage = 0)
+        {
+            return (int) (y * ajustementZoom.Y +
+                          (-maximum["bas"]) * ajustementZoom.Y +
+                          decalage);
         }
 
         private void Relier()
@@ -88,14 +99,6 @@ namespace DecouverteWinForm
             }
         }
 
-        private PointF Offset(PointF point)
-        {
-            point.X += offset.X;
-            point.Y += offset.Y;
-
-            return point;
-        }
-
         private void TrouveMaximum(List<PointF> points)
         {
             maximum["gauche"] = points[0].X;
@@ -110,9 +113,13 @@ namespace DecouverteWinForm
 
         private void Zoom()
         {
+            Size deltaMaximum = new Size();
+            
+            // différence des valeurs extrêmes
             deltaMaximum.Height = (int) (maximum["haut"] - maximum["bas"]);
             deltaMaximum.Width = (int) (maximum["droite"] - maximum["gauche"]);
             
+            // tailleFenetre / delta => facteur de zoom
             ajustementZoom.Y = (float) dimensionsFenetre.Height / deltaMaximum.Height * 0.95f;
             ajustementZoom.X = (float) dimensionsFenetre.Width / deltaMaximum.Width * 0.95f;
         }

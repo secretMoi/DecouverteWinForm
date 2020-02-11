@@ -25,6 +25,8 @@ namespace DecouverteWinForm
         {
             /*spirographe.Add(0, 0);
             spirographe.Add(50, -50);
+            spirographe.Add(60, -50);
+            spirographe.Add(75, -75);
             spirographe.Add(100, 100);*/
             
             Random rand = new Random();
