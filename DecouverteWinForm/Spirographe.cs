@@ -45,9 +45,8 @@ namespace DecouverteWinForm
         public List<Couple> InverseY()
         {
             List<Couple> pointsInverse = new List<Couple>();
-            for (int i = 0; i < points.Count; i++)
+            foreach (Couple point in points)
             {
-                Couple point = points[i];
                 point.Y = -point.Y;
                 
                 pointsInverse.Add(point);

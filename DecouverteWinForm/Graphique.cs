@@ -8,7 +8,6 @@ namespace DecouverteWinForm
 {
     public class Graphique : Element
     {
-        private Point offset;
         private int compteur;
         private readonly Dictionary<string, float> maximum;
         private Size dimensionsFenetre;
@@ -48,10 +47,10 @@ namespace DecouverteWinForm
         private void PlacePoints(List<Couple> points)
         {
             Dimensionne(6, 6); // définit la taille du point
-            
-            for (int i = 0; i < points.Count; i++)
+
+            foreach (Couple point in points)
             {
-                position = CastPointToInt(points[i]).ToPoint();
+                position = CastPointToInt(point).ToPoint();
                 position = Positionne(position);
 
                 AjouterDisque("Point" + compteur, Color.Blue);
@@ -113,12 +112,13 @@ namespace DecouverteWinForm
 
         private void Zoom()
         {
-            Size deltaMaximum = new Size();
-            
-            // différence des valeurs extrêmes
-            deltaMaximum.Height = (int) (maximum["haut"] - maximum["bas"]);
-            deltaMaximum.Width = (int) (maximum["droite"] - maximum["gauche"]);
-            
+            Size deltaMaximum = new Size
+            {
+                // différence des valeurs extrêmes
+                Height = (int) (maximum["haut"] - maximum["bas"]),
+                Width = (int) (maximum["droite"] - maximum["gauche"])
+            };
+
             // tailleFenetre / delta => facteur de zoom
             ajustementZoom.Y = (float) dimensionsFenetre.Height / deltaMaximum.Height * 0.97f;
             ajustementZoom.X = (float) dimensionsFenetre.Width / deltaMaximum.Width * 0.97f;

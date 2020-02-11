@@ -6,7 +6,7 @@ namespace DecouverteWinForm.core
     public class Couple
     {
         private PointF couple;
-        private const float margeErreur = Single.Epsilon;
+        private const float MargeErreur = Single.Epsilon;
 
         public Couple(PointF point)
         {
@@ -74,6 +74,10 @@ namespace DecouverteWinForm.core
         {
             return new Couple(point);
         }
+        public static Couple ToCouple(PointF point)
+        {
+            return new Couple(point);
+        }
 
         public Point ToPoint()
         {
@@ -98,13 +102,16 @@ namespace DecouverteWinForm.core
 
         public override bool Equals(object obj)
         {
+            if (obj == null) return false;
+            if (this == obj) return true;
+            
             Couple objet = obj as Couple;
             return Egal(X, objet.X) && Egal(Y, objet.Y);
         }
 
         private bool Egal(float nombre1, float nombre2)
         {
-            return Math.Abs(nombre1 - nombre2) < margeErreur;
+            return Math.Abs(nombre1 - nombre2) < MargeErreur;
         }
     }
 }
