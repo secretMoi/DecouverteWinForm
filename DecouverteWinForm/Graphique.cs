@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using DecouverteWinForm.core;
 using DecouverteWinForm.Core.Elements;
@@ -11,12 +12,13 @@ namespace DecouverteWinForm
         private int compteur;
         private readonly Dictionary<string, float> maximum;
         private Size dimensionsFenetre;
-        private PointF ajustementZoom;
+        private Couple ajustementZoom;
 
-        public Graphique(Point position, Size dimensionsFenetre) : base(position)
+        public Graphique(Couple position, Size dimensionsFenetre) : base(position)
         {
             this.dimensionsFenetre = dimensionsFenetre;
             compteur = 0;
+            ajustementZoom = new Couple();
 
             maximum = new Dictionary<string, float>();
             maximum.Add("gauche", 0);
@@ -29,6 +31,7 @@ namespace DecouverteWinForm
         {
             Dimensionne(dimensionsFenetre.Width, 4);
             
+            position = new Couple();
             position.X = 0;
             position.Y = PositionneY(0, dimensions.Y / 2);
             
@@ -37,11 +40,11 @@ namespace DecouverteWinForm
 
         public void ListePoints(List<Couple> points)
         {
-            TrouveMaximum(points);
-            Zoom();
-            PlacePoints(points);
-            Abscisse();
-            Relier();
+            TrouveMaximum(points); // trouve les points extremes
+            Zoom(); // effectue un "zoom" pour que les points collent au bord de la fenêtre
+            PlacePoints(points); // place les points
+            Abscisse(); // place les axes
+            Relier(); // relie les points entre eux
         }
 
         private void PlacePoints(List<Couple> points)
@@ -50,20 +53,19 @@ namespace DecouverteWinForm
 
             foreach (Couple point in points)
             {
-                position = CastPointToInt(point).ToPoint();
-                position = Positionne(position);
+                position = Positionne(point);
 
                 AjouterDisque("Point" + compteur, Color.Blue);
-
+                
                 compteur++;
             }
         }
 
-        private Point Positionne(Point point, Point decalage = default)
+        private Couple Positionne(Couple point/*, Point decalage = default*/)
         {
             // étire + réajuste avec le décalage étiré
-            point.X = PositionneX(point.X, decalage.X);
-            point.Y = PositionneY(point.Y, decalage.Y);
+            point.Xi = PositionneX(point.X /*decalage.X*/);
+            point.Yi = PositionneY(point.Y /*decalage.Y*/);
 
             return point;
         }
@@ -88,11 +90,9 @@ namespace DecouverteWinForm
             for (int i = 0; i < compteur - 1; i++)
             {
                 dimensions = liste[i].Position;
-                dimensions.X += 3;
-                dimensions.Y += 3;
+                dimensions += 3;
                 position = liste[i + 1].Position;
-                position.X += 3;
-                position.Y += 3;
+                position += 3;
                 
                 AjouterLigne("Ligne" + i, Color.Blue, 3);
             }
@@ -122,11 +122,6 @@ namespace DecouverteWinForm
             // tailleFenetre / delta => facteur de zoom
             ajustementZoom.Y = (float) dimensionsFenetre.Height / deltaMaximum.Height * 0.97f;
             ajustementZoom.X = (float) dimensionsFenetre.Width / deltaMaximum.Width * 0.97f;
-        }
-        
-        private Couple CastPointToInt(Couple pointFloat)
-        {
-            return new Couple((int) pointFloat.X, (int) pointFloat.Y);
         }
     }
 }

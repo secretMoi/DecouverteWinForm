@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using DecouverteWinForm.core;
 
 namespace DecouverteWinForm.Core.Figures
 {
     public abstract class Figure
     {
         protected List<string> enfants;
-        protected Point position;
-        protected Point dimension;
+        protected Couple position;
+        protected Couple dimension;
         protected readonly Rotation rotation;
         protected Color CouleurRemplissage;
         protected Color CouleurContour;
@@ -23,10 +24,10 @@ namespace DecouverteWinForm.Core.Figures
         public const bool X = true;
         public const bool Y = false;
 
-        public Figure(Point position, Point dimension, Color? couleurRemplissage = null, Color? contour = null, int largeurContour = 0)
+        public Figure(Couple position, Couple dimension, Color? couleurRemplissage = null, Color? contour = null, int largeurContour = 0)
         {
-            this.position = position;
-            this.dimension = dimension;
+            this.position = position.Copie();
+            this.dimension = dimension.Copie();
             rotation = new Rotation();
             enfants = new List<string>();
 
@@ -100,9 +101,9 @@ namespace DecouverteWinForm.Core.Figures
             position.Y = y;
         }
 
-        public Point PointOppose()
+        public Couple PointOppose()
         {
-            Point pointFin = new Point();
+            Couple pointFin = new Couple();
             
             // rayon du pt1 au point 3
             double distanceFin = Math.Sqrt(dimension.X * dimension.X + dimension.Y * dimension.Y);
@@ -120,9 +121,9 @@ namespace DecouverteWinForm.Core.Figures
             return rotation.RotationPoint(position, pointFin);
         }
         
-        public Point PointAdjacent(bool xy = X)
+        public Couple PointAdjacent(bool xy = X)
         {
-            Point pointFin = new Point();
+            Couple pointFin = new Couple();
 
             /*** calcul point de départ ***/
             // si le côté dominant est en absisse
@@ -146,9 +147,9 @@ namespace DecouverteWinForm.Core.Figures
             return enfants;
         }
 
-        public Point Dimension => dimension;
+        public Couple Dimension => dimension;
 
-        public Point Position
+        public Couple Position
         {
             get => position;
             set => position = value;

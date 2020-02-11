@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using DecouverteWinForm.core;
 
 namespace DecouverteWinForm.Core.Figures
 {
@@ -7,7 +8,7 @@ namespace DecouverteWinForm.Core.Figures
         private float angleDebut;
         private float amplitude;
         
-        public Arc(Point position, Point dimension, Color contour, int largeurContour, float angleDebut, float amplitude) : base(position, dimension, null, contour, largeurContour)
+        public Arc(Couple position, Couple dimension, Color contour, int largeurContour, float angleDebut, float amplitude) : base(position, dimension, null, contour, largeurContour)
         {
             this.angleDebut = angleDebut;
             this.amplitude = amplitude;

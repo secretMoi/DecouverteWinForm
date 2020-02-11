@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
+using DecouverteWinForm.core;
 using DecouverteWinForm.Core.Elements;
 
 namespace DecouverteWinForm
 {
     public class Horloge : Element
     {
-        public Horloge(Point position) : base(position)
+        public Horloge(Couple position) : base(position)
         {
             AiguilleSeconde();
             AiguilleMinute();
@@ -17,21 +19,21 @@ namespace DecouverteWinForm
 
         public void AiguilleSeconde()
         {
-            Dimensionne(position.X + 150, position.Y);
+            Dimensionne(position.Xi + 150, position.Yi);
             
             AjouterLigne("AiguilleSeconde", Color.Black, 3);
         }
 
         public void AiguilleMinute()
         {
-            Dimensionne(position.X + 120, position.Y);
+            Dimensionne(position.Xi + 120, position.Yi);
             
             AjouterLigne("AiguilleMinute", Color.Blue, 3);
         }
         
         public void AiguilleHeure()
         {
-            Dimensionne(position.X + 90, position.Y);
+            Dimensionne(position.Xi + 90, position.Yi);
             
             AjouterLigne("AiguilleHeure", Color.Red, 3);
         }
@@ -40,15 +42,15 @@ namespace DecouverteWinForm
         {
             Dimensionne(10, 10);
             
-            int rayon = elements["AiguilleSeconde"].Position.X - elements["AiguilleSeconde"].Dimension.X;
-            Point centre = position;
+            int rayon = elements["AiguilleSeconde"].Position.Xi - elements["AiguilleSeconde"].Dimension.Xi;
+            Couple centre = position.Copie();
             
             for (int i = 0; i < 12; i++)
             {
-                position.X = (int) (centre.X + rayon * Math.Cos(2 * i * Math.PI / 12));
-                position.Y = (int) (centre.Y + rayon * Math.Sin(2 * i * Math.PI / 12));
-                
-                AjouterDisque("Point"+i, Color.Indigo);
+                position.X = (float) (centre.X + rayon * Math.Cos(2 * i * Math.PI / 12));
+                position.Y = (float) (centre.Y + rayon * Math.Sin(2 * i * Math.PI / 12));
+
+                AjouterDisque("Point" + i, Color.Indigo);
             }
         }
 

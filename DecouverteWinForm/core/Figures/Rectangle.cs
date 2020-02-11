@@ -1,10 +1,11 @@
 ﻿using System.Drawing;
+using DecouverteWinForm.core;
 
 namespace DecouverteWinForm.Core.Figures
 {
     public class Rectangle : Figure
     {
-        public Rectangle(Point position, Point dimension, Color? remplissage = null, Color? contour = null, int largeurContour = 10) :
+        public Rectangle(Couple position, Couple dimension, Color? remplissage = null, Color? contour = null, int largeurContour = 10) :
             base(position, dimension, remplissage, contour, largeurContour)
         {
             

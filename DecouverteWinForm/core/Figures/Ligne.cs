@@ -1,10 +1,11 @@
 ﻿using System.Drawing;
+using DecouverteWinForm.core;
 
 namespace DecouverteWinForm.Core.Figures
 {
     public class Ligne : Figure
     {
-        public Ligne(Point positionSource, Point positionDestination, Color contour, int largeurContour) : 
+        public Ligne(Couple positionSource, Couple positionDestination, Color contour, int largeurContour) : 
             base(positionSource, positionDestination, null, contour, largeurContour)
         {
         }
@@ -12,7 +13,7 @@ namespace DecouverteWinForm.Core.Figures
         // on doit overrider Deplace sinon seul le premier point bouge vu que le 2è est associé aux dimensions 
         public override void Deplace(int x, int y)
         {
-            Point anciennePosition = position;
+            Couple anciennePosition = position;
             base.Deplace(x, y);
 
             dimension.X -= anciennePosition.X - position.X;

@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using DecouverteWinForm.core;
 using DecouverteWinForm.Core.Figures;
 
 namespace DecouverteWinForm
@@ -15,7 +16,7 @@ namespace DecouverteWinForm
             InitializeComponent();
             
             Figure.InitialiseConteneur(pictureBox);
-            graphique = new Graphique(new Point(ClientSize.Width / 2, ClientSize.Height / 2), ClientSize);
+            graphique = new Graphique(new Couple(ClientSize.Width / 2, ClientSize.Height / 2), ClientSize);
             spirographe = new Spirographe();
             
             AjoutPoints();
@@ -23,13 +24,13 @@ namespace DecouverteWinForm
 
         private void AjoutPoints()
         {
-            /*spirographe.Add(0, 0);
+            spirographe.Add(0, 0);
             spirographe.Add(50, -50);
             spirographe.Add(60, -50);
             spirographe.Add(75, -75);
-            spirographe.Add(100, 100);*/
+            spirographe.Add(100, 100);
             
-            Random rand = new Random();
+            /*Random rand = new Random();
             int nombre = rand.Next(2, 21);
 
             int x = 0, y = 0;
@@ -40,7 +41,7 @@ namespace DecouverteWinForm
                 y = rand.Next(-100, 100);
 
                 spirographe.Add(x, y);
-            }
+            }*/
         }
 
         private void pictureBox_Paint(object sender, PaintEventArgs e)

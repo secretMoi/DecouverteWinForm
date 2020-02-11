@@ -10,7 +10,6 @@
         <e p="core" t="Include">
           <e p="Couple.cs" t="Include" />
           <e p="Elements" t="Include">
-            <e p="Bonhomme.cs" t="Include" />
             <e p="Element.cs" t="Include" />
           </e>
           <e p="Figures" t="Include">

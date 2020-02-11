@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Drawing;
+using DecouverteWinForm.core;
 
 namespace DecouverteWinForm.Core.Figures
 {
     public class Polygone : Figure
     {
         
-        public Polygone(Point position, Point dimension, Color couleurRemplissage, Color? contour = null, int largeurContour = 0) : base(position, dimension, couleurRemplissage, contour, largeurContour)
+        public Polygone(Couple position, Couple dimension, Color couleurRemplissage, Color? contour = null, int largeurContour = 0) : base(position, dimension, couleurRemplissage, contour, largeurContour)
         {
             //angle = 10.0f;
         }

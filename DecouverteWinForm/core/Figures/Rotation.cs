@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Drawing;
+using DecouverteWinForm.core;
 
 namespace DecouverteWinForm.Core.Figures
 {
@@ -27,11 +26,11 @@ namespace DecouverteWinForm.Core.Figures
             this.angleDebut = 360 - angleDebut;
         }
         
-        public Point RotationPoint(Point positionDepart, Point point)
+        public Couple RotationPoint(Couple positionDepart, Couple point)
         {
             /*** calcul angle de la figure parente ***/
             
-            Point temp = new Point();
+            Couple temp = new Couple();
             double angleRadian = DegreToRadian(angle);
             
             /*

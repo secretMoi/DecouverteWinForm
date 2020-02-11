@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Timers;
 using System.Windows.Forms;
+using DecouverteWinForm.core;
 using DecouverteWinForm.Core.Figures;
 using Timer = System.Timers.Timer;
 
@@ -21,7 +22,7 @@ namespace DecouverteWinForm
             
             Figure.InitialiseConteneur(pictureBox);
             
-            horloge = new Horloge(new Point(ClientSize.Width / 2, ClientSize.Height / 2));
+            horloge = new Horloge(new Couple(ClientSize.Width / 2, ClientSize.Height / 2));
             
             loopTimer = new Timer();
         }

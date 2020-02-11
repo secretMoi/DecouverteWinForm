@@ -8,7 +8,12 @@ namespace DecouverteWinForm.core
         private PointF couple;
         private const float MargeErreur = Single.Epsilon;
 
-        public Couple(PointF point)
+        public Couple(Couple couple)
+        {
+            X = couple.X;
+            Y = couple.Y;
+        }
+        public Couple(PointF point = default)
         {
             couple = point;
         }
@@ -19,6 +24,10 @@ namespace DecouverteWinForm.core
         public Couple(float x, float y)
         {
             couple = new PointF(x, y);
+        }
+        public Couple(double x, double y)
+        {
+            couple = new PointF((float) x, (float) y);
         }
         public Couple(int x, int y)
         {
@@ -94,6 +103,16 @@ namespace DecouverteWinForm.core
             get => couple.Y;
             set => couple.Y = value;
         }
+        public int Xi
+        {
+            get => (int) couple.X;
+            set => couple.X = value;
+        }
+        public int Yi
+        {
+            get => (int) couple.Y;
+            set => couple.Y = value;
+        }
 
         public override string ToString()
         {
@@ -112,6 +131,17 @@ namespace DecouverteWinForm.core
         private bool Egal(float nombre1, float nombre2)
         {
             return Math.Abs(nombre1 - nombre2) < MargeErreur;
+        }
+
+        // utile lors d'effet de bord car quand on fait Couple1 = Couple2, les références sont copiées et non les valeurs
+        public Couple Copie()
+        {
+            return new Couple(X, Y);
+        }
+
+        public void Reset()
+        {
+            couple = new PointF();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using DecouverteWinForm.core;
 
@@ -42,6 +43,7 @@ namespace DecouverteWinForm
             return points;
         }
 
+        //todo optimiser
         public List<Couple> InverseY()
         {
             List<Couple> pointsInverse = new List<Couple>();

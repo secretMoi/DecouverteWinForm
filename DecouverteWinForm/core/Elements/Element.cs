@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using DecouverteWinForm.core;
 using DecouverteWinForm.Core.Figures;
 
 namespace DecouverteWinForm.Core.Elements
@@ -11,15 +12,15 @@ namespace DecouverteWinForm.Core.Elements
     public abstract class Element
     {
         protected readonly Dictionary<string, Figure> elements; // contient les figures de l'élément
-        protected Point position; // position courante de l'élément
-        protected Point dimensions; // utlisé lors de la création de chaque figure
+        protected Couple position; // position courante de l'élément
+        protected Couple dimensions; // utlisé lors de la création de chaque figure
         protected double zoom;
 
-        public Element(Point position)
+        public Element(Couple position)
         {
             elements = new Dictionary<string, Figure>();
             
-            this.position = position;
+            this.position = position.Copie();
 
             this.zoom = 1;
         }
@@ -33,7 +34,7 @@ namespace DecouverteWinForm.Core.Elements
         // permet de mettre à l'échelle un élément
         protected void Dimensionne(int x, int y)
         {
-            dimensions = new Point((int) (x * zoom), (int) (y * zoom));
+            dimensions = new Couple(x * zoom, y * zoom);
         }
 
         // affiche toutes les figures de l'élément
@@ -63,13 +64,13 @@ namespace DecouverteWinForm.Core.Elements
         protected void AjouterDisque(string cle, Color remplissage, Color? contour = null, int largeurContour = 0)
         {
             if (elements.ContainsKey(cle)) return;
-            elements.Add(cle, new Disque(position, dimensions.X, remplissage, contour, largeurContour));
+            elements.Add(cle, new Disque(position, dimensions.Xi, remplissage, contour, largeurContour));
         }
         
         protected void AjouterCercle(string cle, Color contour, int largeurContour = 1)
         {
             if (elements.ContainsKey(cle)) return;
-            elements.Add(cle, new Cercle(position, dimensions.X, contour, largeurContour));
+            elements.Add(cle, new Cercle(position, dimensions.Xi, contour, largeurContour));
         }
         
         protected void AjouterEllipse(string cle, Color remplissage, Color? contour = null, int largeurContour = 0)
@@ -82,8 +83,8 @@ namespace DecouverteWinForm.Core.Elements
         {
             if (elements.ContainsKey(cle)) return;
 
-            Point positionSource = position;
-            Point positionDestination = dimensions;
+            Couple positionSource = position;
+            Couple positionDestination = dimensions;
             elements.Add(cle, new Ligne(positionSource, positionDestination, contour, largeurContour));
         }
 
@@ -94,12 +95,12 @@ namespace DecouverteWinForm.Core.Elements
         }
 
         // déplace à une position donnée
-        public void Deplace(Point positionDestination)
+        public void Deplace(Couple positionDestination)
         {
             positionDestination.X -= position.X;
             positionDestination.Y -= position.Y;
             
-            Deplace(positionDestination.X, positionDestination.Y);
+            Deplace(positionDestination.Xi, positionDestination.Yi);
         }
 
         // déplace en translation
@@ -114,7 +115,7 @@ namespace DecouverteWinForm.Core.Elements
             {
                 figure = elements.ElementAt(id).Value;
 
-                figure?.Deplace(figure.Position.X + x, figure.Position.Y + y);
+                figure?.Deplace(figure.Position.Xi + x, figure.Position.Yi + y);
             }
         }
 
@@ -144,7 +145,7 @@ namespace DecouverteWinForm.Core.Elements
         }
         
         // rectifie la position par rapport au parent
-        protected void AjustePosition(string enfant, string parent, Point positionPreCalculee = default)
+        protected void AjustePosition(string enfant, string parent, Couple positionPreCalculee = default)
         {
             if (positionPreCalculee == default)
                 elements[enfant].Position = elements[parent].PointAdjacent(Figure.Y);
@@ -162,7 +163,7 @@ namespace DecouverteWinForm.Core.Elements
             return elements[cle];
         }
 
-        public Point Position(string cle)
+        public Couple Position(string cle)
         {
             if (GetFigure(cle) != null)
                 return GetFigure(cle).Position;
@@ -170,10 +171,10 @@ namespace DecouverteWinForm.Core.Elements
             return position;
         }
 
-        public Point GetPosition => position;
-        public Point GetDimension => dimensions;
+        public Couple GetPosition => position;
+        public Couple GetDimension => dimensions;
 
-        public Point Dimension(string cle)
+        public Couple Dimension(string cle)
         {
             if (GetFigure(cle) != null)
                 return GetFigure(cle).Dimension;
