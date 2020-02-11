@@ -13,12 +13,12 @@ namespace DecouverteWinForm.Core.Figures
 
         public override void Genere()
         {
-            Graphique.FillRectangle(Remplissage, position.X, position.Y, 
-                dimension.X, dimension.Y);
+            Graphique.FillRectangle(Remplissage, position.Xf, position.Yf, 
+                dimension.Xf, dimension.Yf);
             
             Graphique.DrawRectangle(Contour,
-                position.X, position.Y, 
-                dimension.X, dimension.Y); // dessine le rectangle dans l'image
+                position.Xf, position.Yf, 
+                dimension.Xf, dimension.Yf); // dessine le rectangle dans l'image
         }
     }
 }

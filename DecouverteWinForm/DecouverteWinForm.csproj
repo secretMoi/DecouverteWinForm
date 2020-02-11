@@ -55,7 +55,6 @@
     <Compile Include="core\Figures\Ellipse.cs" />
     <Compile Include="core\Figures\Figure.cs" />
     <Compile Include="core\Figures\Ligne.cs" />
-    <Compile Include="core\Figures\Polygone.cs" />
     <Compile Include="core\Figures\Rectangle.cs" />
     <Compile Include="core\Figures\Rotation.cs" />
     <Compile Include="core\FileGUI.cs" />

@@ -23,8 +23,8 @@ namespace DecouverteWinForm.Core.Figures
         public override void Genere()
         {
             Graphique.DrawLine(Contour,
-                position.X, position.Y,
-                dimension.X, dimension.Y); // dessine la ligne
+                position.Xf, position.Yf,
+                dimension.Xf, dimension.Yf); // dessine la ligne
         }
     }
 }

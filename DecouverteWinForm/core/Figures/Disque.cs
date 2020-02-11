@@ -14,11 +14,11 @@ namespace DecouverteWinForm.Core.Figures
         {
             int rayon = dimension.Xi;
             
-            Graphique.FillEllipse(Remplissage, position.X, position.Y, 
-                dimension.X, dimension.Y);
+            Graphique.FillEllipse(Remplissage, position.Xf, position.Yf, 
+                dimension.Xf, dimension.Yf);
             
             Graphique.DrawEllipse(Contour,
-                position.X, position.Y,
+                position.Xf, position.Yf,
                 rayon, rayon); // dessine le disque dans l'image
         }
     }

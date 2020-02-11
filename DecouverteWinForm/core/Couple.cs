@@ -5,9 +5,11 @@ namespace DecouverteWinForm.core
 {
     public class Couple
     {
-        private PointF couple;
+        //private PointF couple;
+        private double x, y;
         private const float MargeErreur = Single.Epsilon;
 
+        #region Constructeurs
         public Couple(Couple couple)
         {
             X = couple.X;
@@ -15,30 +17,32 @@ namespace DecouverteWinForm.core
         }
         public Couple(PointF point = default)
         {
-            couple = point;
+            X = point.X;
+            Y = point.Y;
         }
         public Couple(Point point)
         {
-            couple = point;
+            X = point.X;
+            Y = point.Y;
         }
         public Couple(float x, float y)
         {
-            couple = new PointF(x, y);
+            X = x;
+            Y = y;
         }
         public Couple(double x, double y)
         {
-            couple = new PointF((float) x, (float) y);
+            X = x;
+            Y = y;
         }
         public Couple(int x, int y)
         {
-            couple = new PointF(x, y);
+            X = x;
+            Y = y;
         }
+        #endregion
 
-        public static Couple Vide()
-        {
-            return new Couple(0, 0);
-        }
-        
+        #region Operateurs
         public static Couple operator +(Couple couple1, Couple couple2)
         {
             Couple coupleResultat = new Couple(
@@ -78,7 +82,15 @@ namespace DecouverteWinForm.core
             
             return coupleResultat; 
         }
+        #endregion
+        
+        // reset les valeurs
+        public static Couple Vide()
+        {
+            return new Couple(0, 0);
+        }
 
+        // convertit un point en couple
         public static Couple ToCouple(Point point)
         {
             return new Couple(point);
@@ -88,31 +100,44 @@ namespace DecouverteWinForm.core
             return new Couple(point);
         }
 
+        // convertit en point int
         public Point ToPoint()
         {
             return new Point((int) X, (int) Y);
         }
 
-        public float X
+        #region GettersSetters
+        public double X
         {
-            get => couple.X;
-            set => couple.X = value;
+            get => x;
+            set => x = value;
         }
-        public float Y
+        public double Y
         {
-            get => couple.Y;
-            set => couple.Y = value;
+            get => y;
+            set => y = value;
+        }
+        public float Xf
+        {
+            get => (float) x;
+            set => x = value;
+        }
+        public float Yf
+        {
+            get => (float) y;
+            set => y = value;
         }
         public int Xi
         {
-            get => (int) couple.X;
-            set => couple.X = value;
+            get => (int) x;
+            set => x = value;
         }
         public int Yi
         {
-            get => (int) couple.Y;
-            set => couple.Y = value;
+            get => (int) y;
+            set => y = value;
         }
+        #endregion
 
         public override string ToString()
         {
@@ -128,7 +153,8 @@ namespace DecouverteWinForm.core
             return Egal(X, objet.X) && Egal(Y, objet.Y);
         }
 
-        private bool Egal(float nombre1, float nombre2)
+        // vérifie que les valeurs stockées sont identiques
+        private bool Egal(double nombre1, double nombre2)
         {
             return Math.Abs(nombre1 - nombre2) < MargeErreur;
         }
@@ -137,11 +163,6 @@ namespace DecouverteWinForm.core
         public Couple Copie()
         {
             return new Couple(X, Y);
-        }
-
-        public void Reset()
-        {
-            couple = new PointF();
         }
     }
 }

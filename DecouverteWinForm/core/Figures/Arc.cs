@@ -16,8 +16,8 @@ namespace DecouverteWinForm.Core.Figures
 
         public override void Genere()
         {
-            Graphique.DrawArc(Contour, position.X, position.Y,
-                dimension.X, dimension.Y,
+            Graphique.DrawArc(Contour, position.Xf, position.Yf,
+                dimension.Xf, dimension.Yf,
                 angleDebut, amplitude);
         }
     }

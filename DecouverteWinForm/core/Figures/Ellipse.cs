@@ -13,12 +13,12 @@ namespace DecouverteWinForm.Core.Figures
         
         public override void Genere()
         {
-            Graphique.FillEllipse(Remplissage, position.X, position.Y, 
-                dimension.X, dimension.Y);
+            Graphique.FillEllipse(Remplissage, position.Xf, position.Yf, 
+                dimension.Xf, dimension.Yf);
             
             Graphique.DrawEllipse(Contour,
-                position.X, position.Y, 
-                dimension.X, dimension.Y); // dessine le cercle dans l'image
+                position.Xf, position.Yf, 
+                dimension.Xf, dimension.Yf); // dessine le cercle dans l'image
         }
     }
 }

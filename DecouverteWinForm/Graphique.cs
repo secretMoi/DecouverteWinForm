@@ -10,7 +10,7 @@ namespace DecouverteWinForm
     public class Graphique : Element
     {
         private int compteur;
-        private readonly Dictionary<string, float> maximum;
+        private readonly Dictionary<string, double> maximum;
         private Size dimensionsFenetre;
         private Couple ajustementZoom;
 
@@ -20,7 +20,7 @@ namespace DecouverteWinForm
             compteur = 0;
             ajustementZoom = new Couple();
 
-            maximum = new Dictionary<string, float>();
+            maximum = new Dictionary<string, double>();
             maximum.Add("gauche", 0);
             maximum.Add("haut", 0);
             maximum.Add("droite", 0);
@@ -70,13 +70,13 @@ namespace DecouverteWinForm
             return point;
         }
 
-        private int PositionneX(float x, float decalage = 0)
+        private int PositionneX(double x, double decalage = 0)
         {
             return (int) (x * ajustementZoom.X -
                           maximum["gauche"] * ajustementZoom.X +
                           decalage);
         }
-        private int PositionneY(float y, float decalage = 0)
+        private int PositionneY(double y, double decalage = 0)
         {
             return (int) (y * ajustementZoom.Y +
                           (-maximum["bas"]) * ajustementZoom.Y +

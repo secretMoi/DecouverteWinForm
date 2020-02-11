@@ -88,10 +88,10 @@ namespace DecouverteWinForm.Core.Figures
             {
                 int inverseur = 1;
                 if (corrige) inverseur = -1;
-                Graphique.TranslateTransform(position.X, position.Y);
+                Graphique.TranslateTransform(position.Xf, position.Yf);
                 // rotation
                 Graphique.RotateTransform((float) (inverseur * rotation.Angle));
-                Graphique.TranslateTransform(-(position.X), -position.Y);
+                Graphique.TranslateTransform(-(position.Xf), -position.Yf);
             }
         }
 

@@ -19,7 +19,6 @@
             <e p="Ellipse.cs" t="Include" />
             <e p="Figure.cs" t="Include" />
             <e p="Ligne.cs" t="Include" />
-            <e p="Polygone.cs" t="Include" />
             <e p="Rectangle.cs" t="Include" />
             <e p="Rotation.cs" t="Include" />
           </e>

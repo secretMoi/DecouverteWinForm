@@ -15,7 +15,7 @@ namespace DecouverteWinForm.Core.Figures
             int rayon = dimension.Xi;
 
             Graphique.DrawEllipse(Contour,
-                position.X, position.Y,
+                position.Xf, position.Yf,
                 rayon, rayon); // dessine le cercle dans l'image
         }
     }
