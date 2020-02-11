@@ -90,6 +90,7 @@ namespace DecouverteWinForm
             this.buttonFond.TabIndex = 7;
             this.buttonFond.Text = "Fond";
             this.buttonFond.UseVisualStyleBackColor = true;
+            this.buttonFond.Click += new System.EventHandler(this.buttonFond_Click);
             // 
             // buttonGo
             // 

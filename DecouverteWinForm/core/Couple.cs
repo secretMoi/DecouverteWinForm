@@ -153,6 +153,11 @@ namespace DecouverteWinForm.core
             return Egal(X, objet.X) && Egal(Y, objet.Y);
         }
 
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
         // vérifie que les valeurs stockées sont identiques
         private bool Egal(double nombre1, double nombre2)
         {
