@@ -41,8 +41,7 @@ namespace DecouverteWinForm
         {
             return points;
         }
-
-        //todo optimiser
+        
         public List<Couple> InverseY()
         {
             // crée une copie par valeur de la liste points

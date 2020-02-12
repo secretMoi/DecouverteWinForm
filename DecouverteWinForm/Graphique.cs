@@ -11,12 +11,12 @@ namespace DecouverteWinForm
     {
         private int compteur;
         private readonly Dictionary<string, double> maximum;
-        private Size dimensionsFenetre;
+        private Couple dimensionsFenetre;
         private Couple ajustementZoom;
 
-        public Graphique(Couple position, Size dimensionsFenetre) : base(position)
+        public Graphique(Couple position, Couple dimensionsFenetre) : base(position)
         {
-            this.dimensionsFenetre = dimensionsFenetre;
+            this.dimensionsFenetre = dimensionsFenetre.Copie();
             compteur = 0;
             ajustementZoom = new Couple();
 
@@ -29,7 +29,7 @@ namespace DecouverteWinForm
 
         public void Abscisse()
         {
-            Dimensionne(dimensionsFenetre.Width, 4);
+            Dimensionne(dimensionsFenetre.Xi, 4);
             
             position = new Couple();
             position.X = 0;
@@ -112,16 +112,14 @@ namespace DecouverteWinForm
 
         private void Zoom()
         {
-            Size deltaMaximum = new Size
-            {
-                // différence des valeurs extrêmes
-                Height = (int) (maximum["haut"] - maximum["bas"]),
-                Width = (int) (maximum["droite"] - maximum["gauche"])
-            };
+            Couple deltaMaximum = new Couple(
+                maximum["droite"] - maximum["gauche"],
+                maximum["haut"] - maximum["bas"]
+            );
 
             // tailleFenetre / delta => facteur de zoom
-            ajustementZoom.Y = (float) dimensionsFenetre.Height / deltaMaximum.Height * 0.97f;
-            ajustementZoom.X = (float) dimensionsFenetre.Width / deltaMaximum.Width * 0.97f;
+            ajustementZoom.Y = dimensionsFenetre.Y / deltaMaximum.Y * 0.97;
+            ajustementZoom.X = dimensionsFenetre.X / deltaMaximum.X * 0.97;
         }
     }
 }

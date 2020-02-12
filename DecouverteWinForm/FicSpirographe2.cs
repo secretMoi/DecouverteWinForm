@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Drawing.Drawing2D;
+using System.Diagnostics;
 using System.Windows.Forms;
 using DecouverteWinForm.core;
 using DecouverteWinForm.Core.Figures;
@@ -15,7 +15,8 @@ namespace DecouverteWinForm
             InitializeComponent();
             
             Figure.InitialiseConteneur(pictureBox);
-            graphique = new Graphique(new Couple(ClientSize.Width / 2, ClientSize.Height / 2), ClientSize);
+            
+            graphique = new Graphique(new Couple(ClientSize.Width / 2, ClientSize.Height / 2), Couple.ToCouple(ClientSize));
             spirographe = new Spirographe();
             
             AjoutPoints();
@@ -45,8 +46,6 @@ namespace DecouverteWinForm
 
         private void pictureBox_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            
             graphique.Affiche(e.Graphics);
         }
 

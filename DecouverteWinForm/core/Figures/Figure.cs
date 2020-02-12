@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using DecouverteWinForm.core;
 
@@ -47,8 +48,9 @@ namespace DecouverteWinForm.Core.Figures
             GraphiquePartage = Graphics.FromHwnd(pictureBox.Handle);
         }
 
-        public void Afficher(Graphics graphics)
+        public void Afficher(Graphics graphics, SmoothingMode mode = SmoothingMode.AntiAlias)
         {
+            graphics.SmoothingMode = mode;
             Dessine(graphics);
         }
 

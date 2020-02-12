@@ -25,6 +25,11 @@ namespace DecouverteWinForm.core
             X = point.X;
             Y = point.Y;
         }
+        public Couple(Size point)
+        {
+            X = point.Width;
+            Y = point.Height;
+        }
         public Couple(float x, float y)
         {
             X = x;
@@ -96,6 +101,10 @@ namespace DecouverteWinForm.core
             return new Couple(point);
         }
         public static Couple ToCouple(PointF point)
+        {
+            return new Couple(point);
+        }
+        public static Couple ToCouple(Size point)
         {
             return new Couple(point);
         }
