@@ -53,7 +53,6 @@ namespace DecouverteWinForm
             this.Controls.Add(this.pictureBox);
             this.Name = "FicSpirographe2";
             this.Text = "FicSpirographe2";
-            this.Load += new System.EventHandler(this.FicSpirographe2_Load);
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox)).EndInit();
             this.ResumeLayout(false);
         }

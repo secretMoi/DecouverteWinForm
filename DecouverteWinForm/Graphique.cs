@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using DecouverteWinForm.core;
@@ -11,8 +12,8 @@ namespace DecouverteWinForm
     {
         private int compteur;
         private readonly Dictionary<string, double> maximum;
-        private Couple dimensionsFenetre;
-        private Couple ajustementZoom;
+        private readonly Couple dimensionsFenetre;
+        private readonly Couple ajustementZoom;
 
         public Graphique(Couple position, Couple dimensionsFenetre) : base(position)
         {
@@ -20,14 +21,16 @@ namespace DecouverteWinForm
             compteur = 0;
             ajustementZoom = new Couple();
 
-            maximum = new Dictionary<string, double>();
-            maximum.Add("gauche", 0);
-            maximum.Add("haut", 0);
-            maximum.Add("droite", 0);
-            maximum.Add("bas", 0);
+            maximum = new Dictionary<string, double>
+            {
+                {"gauche", Couple.MinValue},
+                {"haut", Couple.MinValue},
+                {"droite", Couple.MaxValue},
+                {"bas", Couple.MaxValue}
+            };
         }
 
-        public void Abscisse()
+        private void Abscisse()
         {
             Dimensionne(dimensionsFenetre.Xi, 4);
             
@@ -61,26 +64,26 @@ namespace DecouverteWinForm
             }
         }
 
-        private Couple Positionne(Couple point/*, Point decalage = default*/)
+        private Couple Positionne(Couple point)
         {
             // étire + réajuste avec le décalage étiré
-            point.Xi = PositionneX(point.X /*decalage.X*/);
-            point.Yi = PositionneY(point.Y /*decalage.Y*/);
+            point.X = PositionneX(point.X);
+            point.Y = PositionneY(point.Y);
 
             return point;
         }
 
-        private int PositionneX(double x, double decalage = 0)
+        private double PositionneX(double x, double decalage = 0)
         {
-            return (int) (x * ajustementZoom.X -
-                          maximum["gauche"] * ajustementZoom.X +
-                          decalage);
+            return x * ajustementZoom.X -
+                   maximum["gauche"] * ajustementZoom.X +
+                   decalage;
         }
-        private int PositionneY(double y, double decalage = 0)
+        private double PositionneY(double y, double decalage = 0)
         {
-            return (int) (y * ajustementZoom.Y +
-                          (-maximum["bas"]) * ajustementZoom.Y +
-                          decalage);
+            return y * ajustementZoom.Y +
+                   (-maximum["bas"]) * ajustementZoom.Y +
+                   decalage;
         }
 
         private void Relier()
@@ -118,8 +121,8 @@ namespace DecouverteWinForm
             );
 
             // tailleFenetre / delta => facteur de zoom
-            ajustementZoom.Y = dimensionsFenetre.Y / deltaMaximum.Y * 0.97;
-            ajustementZoom.X = dimensionsFenetre.X / deltaMaximum.X * 0.97;
+            ajustementZoom.Y = dimensionsFenetre.Y / deltaMaximum.Y * 0.98;
+            ajustementZoom.X = dimensionsFenetre.X / deltaMaximum.X * 0.98;
         }
     }
 }

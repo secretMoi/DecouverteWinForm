@@ -10,11 +10,6 @@ namespace DecouverteWinForm.core
         private const float MargeErreur = Single.Epsilon;
 
         #region Constructeurs
-        public Couple(Couple couple)
-        {
-            X = couple.X;
-            Y = couple.Y;
-        }
         public Couple(PointF point = default)
         {
             X = point.X;
@@ -146,6 +141,9 @@ namespace DecouverteWinForm.core
             get => (int) y;
             set => y = value;
         }
+        
+        public static double MaxValue => Double.MaxValue;
+        public static double MinValue => Double.MinValue;
         #endregion
 
         public override string ToString()

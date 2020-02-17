@@ -20,6 +20,8 @@ namespace DecouverteWinForm
             spirographe = new Spirographe();
             
             AjoutPoints();
+            
+            graphique.ListePoints(spirographe.InverseY());
         }
 
         private void AjoutPoints()
@@ -28,16 +30,17 @@ namespace DecouverteWinForm
             spirographe.Add(50, -50);
             spirographe.Add(60, -50);
             spirographe.Add(75, -75);
-            spirographe.Add(100, 100);*/
+            spirographe.Add(100, 100);
+            spirographe.Add(110, 100);*/
             
             Random rand = new Random();
-            int nombre = rand.Next(2, 21);
+            int nombre = rand.Next(2, 100);
 
             int x = 0, y = 0;
 
             for (int i = 0; i < nombre; i++)
             {
-                x = rand.Next(x + 1, x + 100);
+                x = rand.Next(x + 1, x + 1000);
                 y = rand.Next(-100, 100);
 
                 spirographe.Add(x, y);
@@ -47,11 +50,6 @@ namespace DecouverteWinForm
         private void pictureBox_Paint(object sender, PaintEventArgs e)
         {
             graphique.Affiche(e.Graphics);
-        }
-
-        private void FicSpirographe2_Load(object sender, EventArgs e)
-        {
-            graphique.ListePoints(spirographe.InverseY());
         }
     }
 }

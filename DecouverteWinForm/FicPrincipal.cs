@@ -15,6 +15,7 @@ namespace DecouverteWinForm
             MessageBox.Show("Fonction non implémentée", "Non implémenté", MessageBoxButtons.OK);
         }
 
+        //todo faire un système générique (réflexion ?)
         private void menuAProposAPropos_Click(object sender, EventArgs e)
         {
             FicAPropos fenetre = new FicAPropos();
