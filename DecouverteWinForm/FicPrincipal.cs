@@ -1,5 +1,10 @@
 ﻿using System;
+using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
+using Bac2Q2UserControlGraphique.core;
+using DecouverteWinForm.core;
+using Couple = Bac2Q2UserControlGraphique.core.Couple;
 
 namespace DecouverteWinForm
 {
@@ -62,7 +67,6 @@ namespace DecouverteWinForm
         {
             FicClavierSouris fenetre = new FicClavierSouris();
             fenetre.Show();
-            
         }
 
         private void menuApplicationsNavigateur_Click(object sender, EventArgs e)
@@ -74,6 +78,42 @@ namespace DecouverteWinForm
         private void BoutonColore1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Vous avez cliqué");
+        }
+
+
+        private void buttonAjouter_Click(object sender, EventArgs e)
+        {
+            decimal coordonneeX;
+            decimal coordonneeY;
+            
+            if (decimal.TryParse(textBoxX.Text, out coordonneeX) && decimal.TryParse(textBoxY.Text, out coordonneeY))
+            {
+                Couple couple = new Couple((double) coordonneeX, (double) coordonneeY);
+                
+                userControl11.AjoutPoint(couple).ToString();
+                
+                RafraichiListBoxPoints();
+            }
+        }
+
+        private void RafraichiListBoxPoints()
+        {
+            string[] colonnes = new string[3];
+            int compteur = 0;
+            
+            listViewPoints.Items.Clear();
+            
+            foreach (Couple point in userControl11.Points.Liste())
+            {
+                
+                colonnes[0] = "Point " + compteur;
+                colonnes[1] = point.X.ToString();
+                colonnes[2] = point.Y.ToString();
+                
+                listViewPoints.Items.Add(new ListViewItem(colonnes));
+                
+                compteur++;
+            }
         }
     }
 }

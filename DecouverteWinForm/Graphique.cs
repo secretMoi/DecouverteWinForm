@@ -41,7 +41,7 @@ namespace DecouverteWinForm
 
         private void Abscisse()
         {
-            Dimensionne((int) maximum["droite"], 4);
+            Dimensionne(dimensionsFenetre.Xi, 4);
             
             position = new Couple();
             position.X = 0;
