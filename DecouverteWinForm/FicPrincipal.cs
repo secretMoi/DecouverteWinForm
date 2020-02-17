@@ -64,5 +64,16 @@ namespace DecouverteWinForm
             fenetre.Show();
             
         }
+
+        private void menuApplicationsNavigateur_Click(object sender, EventArgs e)
+        {
+            FicNavigateur fenetre = new FicNavigateur();
+            fenetre.Show();
+        }
+
+        private void BoutonColore1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Vous avez cliqué");
+        }
     }
 }

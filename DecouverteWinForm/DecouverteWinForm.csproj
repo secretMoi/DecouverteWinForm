@@ -34,6 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bac2Q2Controles">
+      <HintPath>..\..\Bac2Q2Controles\Bac2Q2Controles\bin\Debug\Bac2Q2Controles.dll</HintPath>
+    </Reference>
+    <Reference Include="Bac2Q2UserControlGraphique">
+      <HintPath>..\..\Bac2Q2UserControlGraphique\Bac2Q2UserControlGraphique\bin\Debug\Bac2Q2UserControlGraphique.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -95,6 +101,12 @@
     <Compile Include="FicListe.Designer.cs">
       <DependentUpon>FicListe.cs</DependentUpon>
     </Compile>
+    <Compile Include="FicNavigateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicNavigateur.Designer.cs">
+      <DependentUpon>FicNavigateur.cs</DependentUpon>
+    </Compile>
     <Compile Include="FicPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FicListe.resx">
       <DependentUpon>FicListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicNavigateur.resx">
+      <DependentUpon>FicNavigateur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FicPrincipal.resx">
       <DependentUpon>FicPrincipal.cs</DependentUpon>

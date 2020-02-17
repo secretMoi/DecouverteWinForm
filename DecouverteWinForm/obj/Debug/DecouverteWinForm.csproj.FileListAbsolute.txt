@@ -1,4 +1,3 @@
-C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.csprojAssemblyReference.cache
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.Form1.resources
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicAPropos.resources
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicEditeur.resources
@@ -19,3 +18,10 @@ C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\Decou
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicHorloge.resources
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicSpirographe2.resources
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicClavierSouris.resources
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicNavigateur.resources
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\Bac2Q2Controles.dll
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\Bac2Q2Controles.pdb
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.csproj.CopyComplete
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\Bac2Q2UserControlGraphique.dll
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\Bac2Q2UserControlGraphique.pdb
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.csprojAssemblyReference.cache

@@ -44,6 +44,9 @@
         <e p="FicListe.cs" t="Include" />
         <e p="FicListe.Designer.cs" t="Include" />
         <e p="FicListe.resx" t="Include" />
+        <e p="FicNavigateur.cs" t="Include" />
+        <e p="FicNavigateur.Designer.cs" t="Include" />
+        <e p="FicNavigateur.resx" t="Include" />
         <e p="FicPrincipal.cs" t="Include" />
         <e p="FicPrincipal.Designer.cs" t="Include" />
         <e p="FicPrincipal.resx" t="Include" />

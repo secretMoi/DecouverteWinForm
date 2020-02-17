@@ -29,18 +29,7 @@ namespace DecouverteWinForm
                 {"bas", Couple.MaxValue}
             };
         }
-
-        private void Abscisse()
-        {
-            Dimensionne(dimensionsFenetre.Xi, 4);
-            
-            position = new Couple();
-            position.X = 0;
-            position.Y = PositionneY(0, dimensions.Y / 2);
-            
-            AjouterRectangle("Abscisse", Color.Red);
-        }
-
+        
         public void ListePoints(List<Couple> points)
         {
             TrouveMaximum(points); // trouve les points extremes
@@ -48,6 +37,17 @@ namespace DecouverteWinForm
             PlacePoints(points); // place les points
             Abscisse(); // place les axes
             Relier(); // relie les points entre eux
+        }
+
+        private void Abscisse()
+        {
+            Dimensionne((int) maximum["droite"], 4);
+            
+            position = new Couple();
+            position.X = 0;
+            position.Y = PositionneY(0, dimensions.Y / 2);
+            
+            AjouterRectangle("Abscisse", Color.Red);
         }
 
         private void PlacePoints(List<Couple> points)
