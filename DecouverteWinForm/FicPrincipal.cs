@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Globalization;
+using System.Reflection;
 using System.Windows.Forms;
-using Bac2Q2UserControlGraphique.core;
-using DecouverteWinForm.core;
 using Couple = Bac2Q2UserControlGraphique.core.Couple;
 
 namespace DecouverteWinForm
@@ -19,83 +17,43 @@ namespace DecouverteWinForm
 
         private void NonImplemente(object sender, EventArgs e)
         {
-            MessageBox.Show("Fonction non implémentée", "Non implémenté", MessageBoxButtons.OK);
-        }
-
-        //todo faire un système générique (réflexion ?)
-        private void menuAProposAPropos_Click(object sender, EventArgs e)
-        {
-            FicAPropos fenetre = new FicAPropos();
-            fenetre.ShowDialog(); // empêche de revenir à la fenêtre précédente
+            MessageBox.Show(@"Fonction non implémentée", @"Non implémenté", MessageBoxButtons.OK);
         }
         
-        private void menuControleProgression_Click(object sender, EventArgs e)
+        private void evenement_Click(object sender, EventArgs e)
         {
-            FicProgression fenetre = new FicProgression();
-            fenetre.ShowDialog(); // empêche de revenir à la fenêtre précédente
-        }
-        
-        private void menuControleListe_Click(object sender, EventArgs e)
-        {
-            FicListe fenetre = new FicListe();
-            fenetre.ShowDialog(); // empêche de revenir à la fenêtre précédente
-        }
-        
-        private void menuControleEditeur_Click(object sender, EventArgs e)
-        {
-            FicEditeur fenetre = new FicEditeur();
-            fenetre.ShowDialog(); // empêche de revenir à la fenêtre précédente
-        }
+            string nom = ((ToolStripMenuItem) sender).Name; // récupère le nom du controle appelant
+            string[] chaine = nom.Split('_'); // scinde le nom pour avoir les 2 parties
+            
+            string @namespace = "DecouverteWinForm";
+            string @class = "Fic" + chaine[1];
 
-        private void spirographeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FicSpirographe fenetre = new FicSpirographe();
-            fenetre.ShowDialog(); // empêche de revenir à la fenêtre précédente
-        }
+            // équivalent var typeClasse = Type.GetType(String.Format("{0}.{1}", @namespace, @class));
+            var typeClasse = Type.GetType($"{@namespace}.{@class}"); // trouve la classe
+            if (typeClasse == null) return; // quitte si la classe est introuvable
+            Form fenetre = Activator.CreateInstance(typeClasse) as Form; // instancie un objet
 
-        private void menuApplicationsHorloge_Click(object sender, EventArgs e)
-        {
-            FicHorloge fenetre = new FicHorloge();
-            fenetre.ShowDialog(); // empêche de revenir à la fenêtre précédente
-        }
-
-        private void menuApplicationsSpinographe2_Click(object sender, EventArgs e)
-        {
-            FicSpirographe2 fenetre = new FicSpirographe2();
-            fenetre.ShowDialog(); // empêche de revenir à la fenêtre précédente
-        }
-
-        private void menuControlesClavierSouris_Click(object sender, EventArgs e)
-        {
-            FicClavierSouris fenetre = new FicClavierSouris();
-            fenetre.Show();
-        }
-
-        private void menuApplicationsNavigateur_Click(object sender, EventArgs e)
-        {
-            FicNavigateur fenetre = new FicNavigateur();
-            fenetre.Show();
+            fenetre?.Show(); // Affiche la fenêtre
         }
 
         private void BoutonColore1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Vous avez cliqué");
         }
-
-        // todo surligner le point sélectionné
+        
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
             decimal coordonneeX;
             decimal coordonneeY;
+
+            if (!decimal.TryParse(textBoxX.Text, out coordonneeX) ||
+                !decimal.TryParse(textBoxY.Text, out coordonneeY)) return;
             
-            if (decimal.TryParse(textBoxX.Text, out coordonneeX) && decimal.TryParse(textBoxY.Text, out coordonneeY))
-            {
-                Couple couple = new Couple((double) coordonneeX, (double) coordonneeY);
+            Couple couple = new Couple((double) coordonneeX, (double) coordonneeY);
                 
-                userControl11.AjoutPoint(couple);
+            userControl11.AjoutPoint(couple);
                 
-                RafraichiListBoxPoints();
-            }
+            RafraichiListBoxPoints();
         }
         
         private void RafraichiListBoxPoints()
