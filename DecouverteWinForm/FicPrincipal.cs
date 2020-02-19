@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
@@ -143,7 +144,7 @@ namespace DecouverteWinForm
         {
             ListViewItem item; // récupère l'item sélectionné
             string[] chaine; // contient le nom du point ainsi que sa position
-            int nombreSupprime = 0; // permet de faire une suppression de plusieurs points en même temps
+            List<int> liste = new List<int>();
             
             // parcours tous les items sélectionnés
             for (int i = 0; i < listViewPoints.SelectedItems.Count; i++)
@@ -151,11 +152,12 @@ namespace DecouverteWinForm
                 item = listViewPoints.SelectedItems[i]; // récupère l'item sélectionné
                 chaine = item.SubItems[0].Text.Split(' '); // récupère le n° du point (sa position)
                 
-                userControl11.Points.RemoveAt(Convert.ToInt32(chaine[1]) - nombreSupprime);
-                nombreSupprime++;
+                liste.Add(Convert.ToInt32(chaine[1]));
             }
             
-            RafraichiListBoxPoints();
+            userControl11.Encadre(liste);
+            
+            userControl11.Invalidate();
         }
     }
 }
