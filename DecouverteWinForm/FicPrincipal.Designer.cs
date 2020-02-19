@@ -55,6 +55,7 @@ namespace DecouverteWinForm
             this.labelX = new System.Windows.Forms.Label();
             this.labelY = new System.Windows.Forms.Label();
             this.textBoxY = new System.Windows.Forms.TextBox();
+            this.buttonSupprimer = new System.Windows.Forms.Button();
             this.menuStripMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.userControl11)).BeginInit();
             this.SuspendLayout();
@@ -167,7 +168,7 @@ namespace DecouverteWinForm
             this.boutonColore1.CouleurGauche = System.Drawing.Color.LightGreen;
             this.boutonColore1.Location = new System.Drawing.Point(14, 31);
             this.boutonColore1.Name = "boutonColore1";
-            this.boutonColore1.Size = new System.Drawing.Size(746, 72);
+            this.boutonColore1.Size = new System.Drawing.Size(745, 72);
             this.boutonColore1.TabIndex = 1;
             this.boutonColore1.Text = "Bouton DLL";
             this.boutonColore1.TransparenceDroite = 64;
@@ -178,7 +179,7 @@ namespace DecouverteWinForm
             // userControl11
             // 
             this.userControl11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userControl11.Location = new System.Drawing.Point(14, 109);
+            this.userControl11.Location = new System.Drawing.Point(14, 108);
             this.userControl11.Name = "userControl11";
             this.userControl11.Size = new System.Drawing.Size(536, 338);
             this.userControl11.TabIndex = 2;
@@ -190,17 +191,20 @@ namespace DecouverteWinForm
                 {this.columnHeaderNom, this.columnHeaderTaille, this.columnHeaderDateCreation});
             this.listViewPoints.FullRowSelect = true;
             this.listViewPoints.HideSelection = false;
-            this.listViewPoints.Location = new System.Drawing.Point(556, 109);
+            this.listViewPoints.Location = new System.Drawing.Point(556, 108);
             this.listViewPoints.Name = "listViewPoints";
-            this.listViewPoints.Size = new System.Drawing.Size(204, 338);
+            this.listViewPoints.Size = new System.Drawing.Size(203, 337);
             this.listViewPoints.TabIndex = 3;
             this.listViewPoints.UseCompatibleStateImageBehavior = false;
             this.listViewPoints.View = System.Windows.Forms.View.Details;
+            this.listViewPoints.ItemSelectionChanged +=
+                new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this
+                    .listViewPoints_ItemSelectionChanged);
             // 
             // columnHeaderNom
             // 
             this.columnHeaderNom.Text = "Nom";
-            this.columnHeaderNom.Width = 80;
+            this.columnHeaderNom.Width = 72;
             // 
             // columnHeaderTaille
             // 
@@ -214,7 +218,7 @@ namespace DecouverteWinForm
             // 
             this.buttonAjouter.Location = new System.Drawing.Point(556, 453);
             this.buttonAjouter.Name = "buttonAjouter";
-            this.buttonAjouter.Size = new System.Drawing.Size(98, 34);
+            this.buttonAjouter.Size = new System.Drawing.Size(98, 33);
             this.buttonAjouter.TabIndex = 4;
             this.buttonAjouter.Text = "Ajouter";
             this.buttonAjouter.UseVisualStyleBackColor = true;
@@ -250,11 +254,22 @@ namespace DecouverteWinForm
             this.textBoxY.Size = new System.Drawing.Size(60, 23);
             this.textBoxY.TabIndex = 7;
             // 
+            // buttonSupprimer
+            // 
+            this.buttonSupprimer.Location = new System.Drawing.Point(661, 454);
+            this.buttonSupprimer.Name = "buttonSupprimer";
+            this.buttonSupprimer.Size = new System.Drawing.Size(98, 33);
+            this.buttonSupprimer.TabIndex = 9;
+            this.buttonSupprimer.Text = "Supprimer";
+            this.buttonSupprimer.UseVisualStyleBackColor = true;
+            this.buttonSupprimer.Click += new System.EventHandler(this.buttonSupprimer_Click);
+            // 
             // FicPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(763, 523);
+            this.Controls.Add(this.buttonSupprimer);
             this.Controls.Add(this.labelY);
             this.Controls.Add(this.textBoxY);
             this.Controls.Add(this.labelX);
@@ -301,5 +316,6 @@ namespace DecouverteWinForm
         private System.Windows.Forms.Label labelY;
         private System.Windows.Forms.Label labelX;
         private System.Windows.Forms.TextBox textBoxX;
+        private System.Windows.Forms.Button buttonSupprimer;
     }
 }
