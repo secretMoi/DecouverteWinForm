@@ -42,6 +42,8 @@ namespace DecouverteWinForm
             this.menuApplications_Horloge = new System.Windows.Forms.ToolStripMenuItem();
             this.menuApplications_Spirographe2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuApplications_Navigateur = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuApplications_GPS = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuApplications_ProcessusThread = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAPropos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAPropos_APropos = new System.Windows.Forms.ToolStripMenuItem();
             this.boutonColore1 = new Bac2Q2Controles.BoutonColore();
@@ -114,7 +116,7 @@ namespace DecouverteWinForm
             this.menuApplication.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[]
             {
                 this.menuApplication_Spirographe, this.menuApplications_Horloge, this.menuApplications_Spirographe2,
-                this.menuApplications_Navigateur
+                this.menuApplications_Navigateur, this.menuApplications_GPS, this.menuApplications_ProcessusThread
             });
             this.menuApplication.Name = "menuApplication";
             this.menuApplication.Size = new System.Drawing.Size(85, 20);
@@ -123,30 +125,44 @@ namespace DecouverteWinForm
             // menuApplication_Spirographe
             // 
             this.menuApplication_Spirographe.Name = "menuApplication_Spirographe";
-            this.menuApplication_Spirographe.Size = new System.Drawing.Size(152, 22);
+            this.menuApplication_Spirographe.Size = new System.Drawing.Size(181, 22);
             this.menuApplication_Spirographe.Text = "Spirographe";
             this.menuApplication_Spirographe.Click += new System.EventHandler(this.evenement_Click);
             // 
             // menuApplications_Horloge
             // 
             this.menuApplications_Horloge.Name = "menuApplications_Horloge";
-            this.menuApplications_Horloge.Size = new System.Drawing.Size(152, 22);
+            this.menuApplications_Horloge.Size = new System.Drawing.Size(181, 22);
             this.menuApplications_Horloge.Text = "Horloge";
             this.menuApplications_Horloge.Click += new System.EventHandler(this.evenement_Click);
             // 
             // menuApplications_Spirographe2
             // 
             this.menuApplications_Spirographe2.Name = "menuApplications_Spirographe2";
-            this.menuApplications_Spirographe2.Size = new System.Drawing.Size(152, 22);
+            this.menuApplications_Spirographe2.Size = new System.Drawing.Size(181, 22);
             this.menuApplications_Spirographe2.Text = "Graphique";
             this.menuApplications_Spirographe2.Click += new System.EventHandler(this.evenement_Click);
             // 
             // menuApplications_Navigateur
             // 
             this.menuApplications_Navigateur.Name = "menuApplications_Navigateur";
-            this.menuApplications_Navigateur.Size = new System.Drawing.Size(152, 22);
+            this.menuApplications_Navigateur.Size = new System.Drawing.Size(181, 22);
             this.menuApplications_Navigateur.Text = "Navigateur";
             this.menuApplications_Navigateur.Click += new System.EventHandler(this.evenement_Click);
+            // 
+            // menuApplications_GPS
+            // 
+            this.menuApplications_GPS.Name = "menuApplications_GPS";
+            this.menuApplications_GPS.Size = new System.Drawing.Size(181, 22);
+            this.menuApplications_GPS.Text = "GPS";
+            this.menuApplications_GPS.Click += new System.EventHandler(this.evenement_Click);
+            // 
+            // menuApplications_ProcessusThread
+            // 
+            this.menuApplications_ProcessusThread.Name = "menuApplications_ProcessusThread";
+            this.menuApplications_ProcessusThread.Size = new System.Drawing.Size(181, 22);
+            this.menuApplications_ProcessusThread.Text = "Processus et threads";
+            this.menuApplications_ProcessusThread.Click += new System.EventHandler(this.evenement_Click);
             // 
             // menuAPropos
             // 
@@ -159,7 +175,7 @@ namespace DecouverteWinForm
             // menuAPropos_APropos
             // 
             this.menuAPropos_APropos.Name = "menuAPropos_APropos";
-            this.menuAPropos_APropos.Size = new System.Drawing.Size(152, 22);
+            this.menuAPropos_APropos.Size = new System.Drawing.Size(122, 22);
             this.menuAPropos_APropos.Text = "A propos";
             this.menuAPropos_APropos.Click += new System.EventHandler(this.evenement_Click);
             // 
@@ -318,5 +334,7 @@ namespace DecouverteWinForm
         private System.Windows.Forms.ToolStripMenuItem menuControle_Editeur;
         private System.Windows.Forms.ToolStripMenuItem menuControle_Liste;
         private System.Windows.Forms.ToolStripMenuItem menuControle_Progression;
+        private System.Windows.Forms.ToolStripMenuItem menuApplications_GPS;
+        private System.Windows.Forms.ToolStripMenuItem menuApplications_ProcessusThread;
     }
 }

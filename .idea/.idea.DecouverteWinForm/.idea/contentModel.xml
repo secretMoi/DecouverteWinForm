@@ -32,12 +32,18 @@
         <e p="FicAPropos.cs" t="Include" />
         <e p="FicAPropos.Designer.cs" t="Include" />
         <e p="FicAPropos.resx" t="Include" />
+        <e p="FicCarte.cs" t="Include" />
+        <e p="FicCarte.Designer.cs" t="Include" />
+        <e p="FicCarte.resx" t="Include" />
         <e p="FicClavierSouris.cs" t="Include" />
         <e p="FicClavierSouris.Designer.cs" t="Include" />
         <e p="FicClavierSouris.resx" t="Include" />
         <e p="FicEditeur.cs" t="Include" />
         <e p="FicEditeur.Designer.cs" t="Include" />
         <e p="FicEditeur.resx" t="Include" />
+        <e p="FicGPS.cs" t="Include" />
+        <e p="FicGPS.Designer.cs" t="Include" />
+        <e p="FicGPS.resx" t="Include" />
         <e p="FicHorloge.cs" t="Include" />
         <e p="FicHorloge.Designer.cs" t="Include" />
         <e p="FicHorloge.resx" t="Include" />
@@ -50,6 +56,9 @@
         <e p="FicPrincipal.cs" t="Include" />
         <e p="FicPrincipal.Designer.cs" t="Include" />
         <e p="FicPrincipal.resx" t="Include" />
+        <e p="FicProcessusThread.cs" t="Include" />
+        <e p="FicProcessusThread.Designer.cs" t="Include" />
+        <e p="FicProcessusThread.resx" t="Include" />
         <e p="FicProgression.cs" t="Include" />
         <e p="FicProgression.Designer.cs" t="Include" />
         <e p="FicProgression.resx" t="Include" />

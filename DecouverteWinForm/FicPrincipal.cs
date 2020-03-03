@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Reflection;
 using System.Windows.Forms;
 using Couple = Bac2Q2UserControlGraphique.core.Couple;
 
@@ -25,7 +24,7 @@ namespace DecouverteWinForm
             string nom = ((ToolStripMenuItem) sender).Name; // récupère le nom du controle appelant
             string[] chaine = nom.Split('_'); // scinde le nom pour avoir les 2 parties
             
-            string @namespace = "DecouverteWinForm";
+            string @namespace = GetType().Namespace;
             string @class = "Fic" + chaine[1];
 
             // équivalent var typeClasse = Type.GetType(String.Format("{0}.{1}", @namespace, @class));
@@ -38,16 +37,13 @@ namespace DecouverteWinForm
 
         private void BoutonColore1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Vous avez cliqué");
+            MessageBox.Show(@"Vous avez cliqué");
         }
         
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
-            decimal coordonneeX;
-            decimal coordonneeY;
-
-            if (!decimal.TryParse(textBoxX.Text, out coordonneeX) ||
-                !decimal.TryParse(textBoxY.Text, out coordonneeY)) return;
+            if (!decimal.TryParse(textBoxX.Text, out decimal coordonneeX) ||
+                !decimal.TryParse(textBoxY.Text, out decimal coordonneeY)) return;
             
             Couple couple = new Couple((double) coordonneeX, (double) coordonneeY);
                 

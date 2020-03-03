@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace DecouverteWinForm
@@ -14,7 +15,21 @@ namespace DecouverteWinForm
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
-            Application.Run(new FicPrincipal());
+            if(!IsRunning())
+                Application.Run(new FicPrincipal());
+        }
+
+        private static bool IsRunning()
+        {
+            Process processActuel = Process.GetCurrentProcess();
+            Process[] processes = Process.GetProcesses();
+
+            foreach (Process process in processes)
+                if(processActuel.Id != process.Id)
+                    if (process.ProcessName == processActuel.ProcessName)
+                        return true;
+
+            return false;
         }
     }
 }

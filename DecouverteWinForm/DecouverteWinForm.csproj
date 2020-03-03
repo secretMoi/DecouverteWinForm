@@ -77,6 +77,12 @@
     <Compile Include="FicAPropos.Designer.cs">
       <DependentUpon>FicAPropos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FicCarte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicCarte.Designer.cs">
+      <DependentUpon>FicCarte.cs</DependentUpon>
+    </Compile>
     <Compile Include="FicClavierSouris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,12 @@
     </Compile>
     <Compile Include="FicEditeur.Designer.cs">
       <DependentUpon>FicEditeur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicGPS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicGPS.Designer.cs">
+      <DependentUpon>FicGPS.cs</DependentUpon>
     </Compile>
     <Compile Include="FicHorloge.cs">
       <SubType>Form</SubType>
@@ -112,6 +124,12 @@
     </Compile>
     <Compile Include="FicPrincipal.Designer.cs">
       <DependentUpon>FicPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicProcessusThread.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicProcessusThread.Designer.cs">
+      <DependentUpon>FicProcessusThread.cs</DependentUpon>
     </Compile>
     <Compile Include="FicProgression.cs">
       <SubType>Form</SubType>
@@ -148,11 +166,17 @@
     <EmbeddedResource Include="FicAPropos.resx">
       <DependentUpon>FicAPropos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FicCarte.resx">
+      <DependentUpon>FicCarte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FicClavierSouris.resx">
       <DependentUpon>FicClavierSouris.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FicEditeur.resx">
       <DependentUpon>FicEditeur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicGPS.resx">
+      <DependentUpon>FicGPS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FicHorloge.resx">
       <DependentUpon>FicHorloge.cs</DependentUpon>
@@ -165,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FicPrincipal.resx">
       <DependentUpon>FicPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicProcessusThread.resx">
+      <DependentUpon>FicProcessusThread.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FicProgression.resx">
       <DependentUpon>FicProgression.cs</DependentUpon>
