@@ -1,0 +1,10 @@
+Se connecter à une BDD Access
+Dans VS
+Affichage -> Explorateur de serveur -> 
+
+POur inclure la bdd
+Ajouter -> Données -> DataSet -> mettre les tables dedans
+
+Lien identifiant et bdd
+DataGridView -> fleche en haut à droite
+Propriétés TextBox -> DataBinding -> Text -> Autres sources de données -> datasetPerso -> Client -> NUM

@@ -44,6 +44,7 @@ namespace DecouverteWinForm
             this.menuApplications_Navigateur = new System.Windows.Forms.ToolStripMenuItem();
             this.menuApplications_GPS = new System.Windows.Forms.ToolStripMenuItem();
             this.menuApplications_ProcessusThread = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuApplications_BDBasique = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAPropos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAPropos_APropos = new System.Windows.Forms.ToolStripMenuItem();
             this.boutonColore1 = new Bac2Q2Controles.BoutonColore();
@@ -58,6 +59,8 @@ namespace DecouverteWinForm
             this.labelY = new System.Windows.Forms.Label();
             this.textBoxY = new System.Windows.Forms.TextBox();
             this.buttonSupprimer = new System.Windows.Forms.Button();
+            this.menuApplications_BDDataset = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuApplications_BDCouches = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.userControl11)).BeginInit();
             this.SuspendLayout();
@@ -116,7 +119,8 @@ namespace DecouverteWinForm
             this.menuApplication.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[]
             {
                 this.menuApplication_Spirographe, this.menuApplications_Horloge, this.menuApplications_Spirographe2,
-                this.menuApplications_Navigateur, this.menuApplications_GPS, this.menuApplications_ProcessusThread
+                this.menuApplications_Navigateur, this.menuApplications_GPS, this.menuApplications_ProcessusThread,
+                this.menuApplications_BDBasique, this.menuApplications_BDDataset, this.menuApplications_BDCouches
             });
             this.menuApplication.Name = "menuApplication";
             this.menuApplication.Size = new System.Drawing.Size(85, 20);
@@ -163,6 +167,13 @@ namespace DecouverteWinForm
             this.menuApplications_ProcessusThread.Size = new System.Drawing.Size(181, 22);
             this.menuApplications_ProcessusThread.Text = "Processus et threads";
             this.menuApplications_ProcessusThread.Click += new System.EventHandler(this.evenement_Click);
+            // 
+            // menuApplications_BDBasique
+            // 
+            this.menuApplications_BDBasique.Name = "menuApplications_BDBasique";
+            this.menuApplications_BDBasique.Size = new System.Drawing.Size(181, 22);
+            this.menuApplications_BDBasique.Text = "BDD (basique)";
+            this.menuApplications_BDBasique.Click += new System.EventHandler(this.evenement_Click);
             // 
             // menuAPropos
             // 
@@ -281,6 +292,20 @@ namespace DecouverteWinForm
             this.buttonSupprimer.UseVisualStyleBackColor = true;
             this.buttonSupprimer.Click += new System.EventHandler(this.buttonSupprimer_Click);
             // 
+            // menuApplications_BDDataset
+            // 
+            this.menuApplications_BDDataset.Name = "menuApplications_BDDataset";
+            this.menuApplications_BDDataset.Size = new System.Drawing.Size(181, 22);
+            this.menuApplications_BDDataset.Text = "BDD (dataset)";
+            this.menuApplications_BDDataset.Click += new System.EventHandler(this.evenement_Click);
+            // 
+            // menuApplications_BDCouches
+            // 
+            this.menuApplications_BDCouches.Name = "menuApplications_BDCouches";
+            this.menuApplications_BDCouches.Size = new System.Drawing.Size(181, 22);
+            this.menuApplications_BDCouches.Text = "BDD (couches)";
+            this.menuApplications_BDCouches.Click += new System.EventHandler(this.evenement_Click);
+            // 
             // FicPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -336,5 +361,8 @@ namespace DecouverteWinForm
         private System.Windows.Forms.ToolStripMenuItem menuControle_Progression;
         private System.Windows.Forms.ToolStripMenuItem menuApplications_GPS;
         private System.Windows.Forms.ToolStripMenuItem menuApplications_ProcessusThread;
+        private System.Windows.Forms.ToolStripMenuItem menuApplications_BDBasique;
+        private System.Windows.Forms.ToolStripMenuItem menuApplications_BDCouches;
+        private System.Windows.Forms.ToolStripMenuItem menuApplications_BDDataset;
     }
 }

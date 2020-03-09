@@ -40,6 +40,15 @@
     <Reference Include="Bac2Q2UserControlGraphique">
       <HintPath>..\..\Bac2Q2UserControlGraphique\Bac2Q2UserControlGraphique\bin\Debug\Bac2Q2UserControlGraphique.dll</HintPath>
     </Reference>
+    <Reference Include="ISET2018_CouAcces">
+      <HintPath>..\..\..\Downloads\Couches\ISET2018_CouGestion\ISET2018_CouGestion\bin\Debug\ISET2018_CouAcces.dll</HintPath>
+    </Reference>
+    <Reference Include="ISET2018_CouClasses">
+      <HintPath>..\..\..\Downloads\Couches\ISET2018_CouGestion\ISET2018_CouGestion\bin\Debug\ISET2018_CouClasses.dll</HintPath>
+    </Reference>
+    <Reference Include="ISET2018_CouGestion">
+      <HintPath>..\..\..\Downloads\Couches\ISET2018_CouGestion\ISET2018_CouGestion\bin\Debug\ISET2018_CouGestion.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FicBDCouches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicBDCouches.Designer.cs">
+      <DependentUpon>FicBDCouches.cs</DependentUpon>
+    </Compile>
     <Compile Include="core\Couple.cs" />
     <Compile Include="core\Elements\Element.cs" />
     <Compile Include="core\Figures\Arc.cs" />
@@ -65,6 +80,11 @@
     <Compile Include="core\Figures\Rotation.cs" />
     <Compile Include="core\FileGUI.cs" />
     <Compile Include="core\Ressource.cs" />
+    <Compile Include="DataSetPerso.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPerso.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EcranAccueil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +96,18 @@
     </Compile>
     <Compile Include="FicAPropos.Designer.cs">
       <DependentUpon>FicAPropos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicBDBasique.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicBDBasique.Designer.cs">
+      <DependentUpon>FicBDBasique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicBDDataset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicBDDataset.Designer.cs">
+      <DependentUpon>FicBDDataset.cs</DependentUpon>
     </Compile>
     <Compile Include="FicCarte.cs">
       <SubType>Form</SubType>
@@ -160,11 +192,20 @@
     <Compile Include="Spirographe.cs">
       <DependentUpon>FicSpirographe2.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FicBDCouches.resx">
+      <DependentUpon>FicBDCouches.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EcranAccueil.resx">
       <DependentUpon>EcranAccueil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FicAPropos.resx">
       <DependentUpon>FicAPropos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicBDBasique.resx">
+      <DependentUpon>FicBDBasique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicBDDataset.resx">
+      <DependentUpon>FicBDDataset.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FicCarte.resx">
       <DependentUpon>FicCarte.cs</DependentUpon>
@@ -211,6 +252,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DataSetPerso.xsc">
+      <DependentUpon>DataSetPerso.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPerso.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPerso.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetPerso.xss">
+      <DependentUpon>DataSetPerso.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -231,6 +283,11 @@
     <EmbeddedResource Include="Resources\volcan.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="perso.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

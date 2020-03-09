@@ -32,6 +32,9 @@
         <e p="FicAPropos.cs" t="Include" />
         <e p="FicAPropos.Designer.cs" t="Include" />
         <e p="FicAPropos.resx" t="Include" />
+        <e p="FicBDBasique.cs" t="Include" />
+        <e p="FicBDBasique.Designer.cs" t="Include" />
+        <e p="FicBDBasique.resx" t="Include" />
         <e p="FicCarte.cs" t="Include" />
         <e p="FicCarte.Designer.cs" t="Include" />
         <e p="FicCarte.resx" t="Include" />

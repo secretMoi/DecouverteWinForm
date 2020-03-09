@@ -7,7 +7,6 @@ C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\Decou
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicSpirographe.resources
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.Properties.Resources.resources
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.csproj.GenerateResource.cache
-C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.csproj.CoreCompileInputs.cache
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\Resources\fond.jpg
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\Resources\volcan.png
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\DecouverteWinForm.exe.config
@@ -28,3 +27,13 @@ C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\Decou
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicGPS.resources
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicCarte.resources
 C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicProcessusThread.resources
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicBDBasique.resources
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\perso.mdb
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicBDDataset.resources
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\ISET2018_CouAcces.dll
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\ISET2018_CouClasses.dll
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\ISET2018_CouGestion.dll
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\ISET2018_CouAcces.pdb
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\ISET2018_CouClasses.pdb
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\bin\Debug\ISET2018_CouGestion.pdb
+C:\Users\winmo\RiderProjects\DecouverteWinForm\DecouverteWinForm\obj\Debug\DecouverteWinForm.FicBDCouches.resources
