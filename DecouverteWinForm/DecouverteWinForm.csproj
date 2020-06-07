@@ -169,6 +169,12 @@
     <Compile Include="FicProgression.Designer.cs">
       <DependentUpon>FicProgression.cs</DependentUpon>
     </Compile>
+    <Compile Include="FicRegex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicRegex.Designer.cs">
+      <DependentUpon>FicRegex.cs</DependentUpon>
+    </Compile>
     <Compile Include="FicSpirographe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FicProgression.resx">
       <DependentUpon>FicProgression.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicRegex.resx">
+      <DependentUpon>FicRegex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FicSpirographe.resx">
       <DependentUpon>FicSpirographe.cs</DependentUpon>
